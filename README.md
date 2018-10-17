@@ -1,2 +1,2 @@
 # TAC-seq gene expression
-TAC-seq gene expression data analysis software
+This repository contains TAC-seq gene expression data analysis software.
