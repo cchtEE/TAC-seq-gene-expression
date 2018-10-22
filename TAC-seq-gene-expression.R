@@ -5,12 +5,11 @@ library(pheatmap)
 
 # read data ---------------------------------------------------------------
 
-targets <- read_tsv("data/targets.tsv")
+targets <- read_tsv("TAC-seq-gene-expression/data/targets.tsv")
 
-df <- read_tsv("data/READY4_UMI1.tsv") %>%
-  mutate(sample = str_remove(sample, "_S\\d+_*_R\\d_\\d+")) %>%
+df <- read_tsv("TAC-seq-gene-expression/data/TAC-seq_counts.tsv.tsv") %>%
   filter(
-    sample != "Undetermined",  # remove undetermined samples
+    !str_detect(sample, "Undetermined"),  # remove undetermined samples
     locus != "unmatched"  # remove unmatched loci
   ) %>%
   left_join(targets, by = c("locus" = "id"))

@@ -1,282 +1,4 @@
-[0m[0K]0;:/c/Users/hindr/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[?25l
-[0K[?25husage: git [--version] [--help] [-C <path>] [-c name=value][0K[?25l
-           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path][0K
-           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare][0K
-           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>][0K
-           <command> [<args>][0K
-[0K
-These are common Git commands used in various situations:[0K
-[0K
-start a working area (see also: git help tutorial)[0K
-   clone      Clone a repository into a new directory[0K
-   init       Create an empty Git repository or reinitialize an existing one[0K
-[0K
-work on the current change (see also: git help everyday)[0K
-   add        Add file contents to the index[0K
-   mv         Move or rename a file, a directory, or a symlink[0K
-   reset      Reset current HEAD to the specified state[0K
-   rm         Remove files from the working tree and from the index[0K
-[0K
-examine the history and state (see also: git help revisions)[0K
-   bisect     Use binary search to find the commit that introduced a bug[0K
-   grep       Print lines matching a pattern[0K
-   log        Show commit logs[0K
-   show       Show various types of objects[0K
-   status     Show the working tree status[0K
-[0K
-grow, mark and tweak your common history[0K
-   branch     List, create, or delete branches[0K
-   checkout   Switch branches or restore working tree files[0K
-   commit     Record changes to the repository[0K
-   diff       Show changes between commits, commit and working tree, etc[0K
-   merge      Join two or more development histories together[0K
-   rebase     Reapply commits on top of another base tip[0K
-   tag        Create, list, delete or verify a tag object signed with GPG[0K
-[0K
-collaborate (see also: git help workflows)[0K
-   fetch      Download objects and refs from another repository[0K
-   pull       Fetch from and integrate with another repository or a local branch[0K
-   push       Update remote refs along with associated objects[0K
-[0K
-'git help -a' and 'git help -g' list available subcommands and some[0K
-concept guides. See 'git help <command>' or 'git help <concept>'[0K
-to read about a specific subcommand or concept.[0K
-[0K[?25h[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25hu[0Kl[0Kl[0K[?25l
-[0K[?25hAlready up to date.[0K[?25l
-[0K[?25h[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K[1G[?25h[?25l
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25h[?25lu[0K[8G[?25h[9G[?25l$ git pus[0K[?25hh[0K[?25l$ git pus[0K[?25h[?25l$ git pu[0K[?25h[?25l$ git p[0K[9G[?25h[8G[?25l$ git[0K[7G[?25h[?25l$ git a[0K[?25hd[0Kd[0K[?25l
-[0K[?25h[?25lNothing specified, nothing added.[0K[1G[?25h[?25l
-Maybe you wanted to say 'git add .'?[0K
-[0K[?25h[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add -[0K[?25hh[0K[?25l
-[0K[?25husage: git add [<options>] [--] <pathspec>...[0K[?25l
-[0K
-    -n, --dry-run         dry run[0K
-    -v, --verbose         be verbose[0K
-[0K
-    -i, --interactive     interactive picking[0K
-    -p, --patch           select hunks interactively[0K
-    -e, --edit            edit current diff and apply[0K
-    -f, --force           allow adding otherwise ignored files[0K
-    -u, --update          update tracked files[0K
-    --renormalize         renormalize EOL of tracked files (implies -u)[0K
-    -N, --intent-to-add   record only the fact that the path will be added later[0K
-    -A, --all             add changes from all tracked and untracked files[0K
-    --ignore-removal      ignore paths removed in the working tree (same as --no-all)[0K
-    --refresh             don't add, only refresh the index[0K
-    --ignore-errors       just skip files which cannot be added because of errors[0K
-    --ignore-missing      check if - even missing - files are ignored in dry run[0K
-    --chmod <(+/-)x>      override the executable bit of the listed files[0K
-[0K
-[0K[?25h[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-]0;:/c/Users/hindr/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[2A[?25h]0;:/c/Users/hindr/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[?25l
 
-[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add -[0K[?25h-[0Ka[0Kl[0Kl[0K[?25l
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/debug-breakpoints.pper.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/files-pane.pper.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/source-pane.pper.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/windowlayoutstate.pper.[0K
-The file will have its original line endings in your working directory.[0K[1A[?25h[?25l
-
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/workbench-pane.pper.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/persistent-state.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/rmd-outputs.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/3ADDB8DF.[0K
-The file will have its original line endings in your working directory.[0K[1A[?25h[?25l
-
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/BCF51075.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/BFCFE3FF.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/INDEX.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-89E82A3/37B8A32F-contents.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-89E82A3/629BEA69-contents.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-89E82A3/D852D447-contents.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-89E82A3/F3C66F4D.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-89E82A3/F3C66F4D-contents.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/history_entries.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/crosstalk-1.0.0/css/cros[0Ks[?25l
-talk.css.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/crosstalk-1.0.0/js/cross[0Kt
-alk.js.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/crosstalk-1.0.0/js/cross[0Kt[?25l
-alk.js.map.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/crosstalk-1.0.0/js/cross[0Kt[?25l
-alk.min.js.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/htmlwidgets-1.2/htmlwidg[0Ke[?25l
-ts.js.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/jquery-1.11.3/jquery-AUT[0KH
-ORS.txt.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/jquery-1.11.3/jquery.js.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/jquery-1.11.3/jquery.min[0K.[?25l
-js.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/lib[0K/[?25l
-colourpicker/LICENSE.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/lib[0K/[?25l
-colourpicker/colourpicker.min.js.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/lib[0K/[?25l
-mathjax/cdn.js.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/lib[0K/
-plotlyjs/LICENSE.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/lib[0K/[?25l
-plotlyjs/plotly-htmlwidgets.css.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/lib[0K/[?25l
-plotlyjs/plotly-latest.min.js.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/lib[0K/[?25l
-selectize/selectize.bootstrap3.css.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/lib[0K/[?25l
-selectize/selectize.min.js.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/lib[0K/
-typedarray/LICENSE.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/plo[0Kt[1G[?25h[?25l
-ly.js.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-htmlwidgets-css-1[0K.
-39.2/plotly-htmlwidgets.css.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-main-1.39.2/plotl[0Ky
--latest.min.js.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/shared/notebooks/paths.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25h[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[?25l
-[0K[?25husage: git [--version] [--help] [-C <path>] [-c name=value][0K[?25l
-           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path][0K
-           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare][0K
-           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>][0K
-           <command> [<args>][0K
-[0K
-These are common Git commands used in various situations:[0K
-[0K
-start a working area (see also: git help tutorial)[0K
-   clone      Clone a repository into a new directory[0K
-   init       Create an empty Git repository or reinitialize an existing one[0K
-[0K
-work on the current change (see also: git help everyday)[0K
-   add        Add file contents to the index[0K
-   mv         Move or rename a file, a directory, or a symlink[0K
-   reset      Reset current HEAD to the specified state[0K
-   rm         Remove files from the working tree and from the index[0K
-[0K
-examine the history and state (see also: git help revisions)[0K
-   bisect     Use binary search to find the commit that introduced a bug[0K
-   grep       Print lines matching a pattern[0K
-   log        Show commit logs[0K
-   show       Show various types of objects[0K
-   status     Show the working tree status[0K
-[0K
-grow, mark and tweak your common history[0K
-   branch     List, create, or delete branches[0K
-   checkout   Switch branches or restore working tree files[0K
-   commit     Record changes to the repository[0K
-   diff       Show changes between commits, commit and working tree, etc[0K
-   merge      Join two or more development histories together[0K
-   rebase     Reapply commits on top of another base tip[0K
-   tag        Create, list, delete or verify a tag object signed with GPG[0K
-[0K
-collaborate (see also: git help workflows)[0K
-   fetch      Download objects and refs from another repository[0K
-   pull       Fetch from and integrate with another repository or a local branch[0K
-   push       Update remote refs along with associated objects[0K
-[0K
-'git help -a' and 'git help -g' list available subcommands and some[0K
-concept guides. See 'git help <command>' or 'git help <concept>'[0K
-to read about a specific subcommand or concept.[0K
-[0K[?25h[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hit[0K[7G[?25l$ git s[0K[?25hh[0Ko[0Kw[0K[?25l
-[0K[?25h[0;33mcommit 4b056c0b87c36edc85f1b13bfbd93c219b707972 ([0;36;96mHEAD -> [0;32;92mmaster[0;33m, [0;31;91morigin/master[0;33m, [0;31;91morigin/HEAD[0;33m)[0m[0K[?25l
-Author: Hindrek Teder <hindrek.teder@gmail.com>[0K
-Date:   Wed Oct 17 20:43:54 2018 +0300[0K
-[0K
-    Update README.md[0K
-[0K
-[0;1mdiff --git a/README.md b/README.md[0m[0K
-[0;1mindex a53f71a..ae6e8b0 100644[0m[0K
-[0;1m--- a/README.md[0m[0K
-[0;1m+++ b/README.md[0m[0K
-[0;36m@@ -1,2 +1,2 @@[0m[0K
- # TAC-seq gene expression[0K
-[0;31m-TAC-seq gene expression data analysis software[0m[0K[1G[?25h[?25l
-[0;32m+This repository contains TAC-seq gene expression data analysis software.[0m[0K
-[0K[?25h[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hit[0K[7G[?25l$ git s[0K[?25ht[0Ka[0Kt[0Ku[0Ks[0K[?25l
-[0K[?25h[?25lOn branch master[0K[1G[?25h[?25l
-Your branch is up to date with 'origin/master'.[0K
-[0K
-Changes to be committed:[0K
-  (use "git reset HEAD <file>..." to unstage)[0K
-[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/console06/91694022[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/console06/INDEX001[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/pcs/debug-breakpoints.pper[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/pcs/files-pane.pper[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/pcs/source-pane.pper[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/pcs/windowlayoutstate.pper[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/pcs/workbench-pane.pper[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/persistent-state[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/rmd-outputs[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/saved_source_markers[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/sources/prop/3ADDB8DF[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/sources/prop/BCF51075[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/sources/prop/BFCFE3FF[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/sources/prop/INDEX[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/sources/s-89E82A3/37B8A32F-contents[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/sources/s-89E82A3/3EB2C201-contents[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/sources/s-89E82A3/629BEA69-contents[0m[0K[9G[?25h[?25l
-        [0;32mnew file:   .Rproj.user/1C9E7A50/sources/s-89E82A3/8DB55FDA-contents[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/sources/s-89E82A3/D852D447-contents[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/sources/s-89E82A3/F3C66F4D[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/sources/s-89E82A3/F3C66F4D-contents[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/sources/s-89E82A3/lock_file[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/viewer_history/current_index[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/viewer_history/history_entries[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/index.html[0m[0K
-        [0;32mnew file:   .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/crosstalk-1.0.0/css/crosstalk.css[0m[0K
         [0;32mnew file:   .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/crosstalk-1.0.0/js/crosstalk.js[0m[0K
         [0;32mnew file:   .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/crosstalk-1.0.0/js/crosstalk.js.map[0m[0K
         [0;32mnew file:   .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/crosstalk-1.0.0/js/crosstalk.min.js[0m[0K
@@ -986,4 +708,365 @@ $[0K[3G[?25h[?25l$ q[0K[?25h[?25l$[0K[3G[?25h[?25l$ g[0K[?25hi[
 [0K[?25h[?25l
 [0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
 $[0K[3G[?25h[?25l$ git add all[0K[?25h[13G[12G[11G[?25l$ git add -all[0K[12G[?25h[?25l$ git add --all[0K[13G[?25h[?25l
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/files-pane.pper.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/source-pane.pper.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/windowlayoutstate.pper.[0K[1G[?25h[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/workbench-pane.pper.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/BCF51075.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/INDEX.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/shared/notebooks/paths.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/packages-pane.pper.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/32A76CE0.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/95025B8.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/A329E905.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/C8D8A001.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/D3AFD765.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/DD44D025.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-A5BA2A79/C4FAA1FB.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-A5BA2A79/C4FAA1FB-contents.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-A5BA2A79/F3C66F4D.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-A5BA2A79/F3C66F4D-contents.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in data/READY4_UMI1.tsv.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25h[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[3G[?25h[4G[?25l$ gi[0K[?25ht[0K[7G[?25l$ git c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[14G[?25l$ git commit -[0K[?25hm[0K[17G[?25l$ git commit -m "[0K[?25ha[0Kd[0Kd[0K[22G[?25l$ git commit -m "add w[0K[?25he[0Kb[0K[26G[?25l$ git commit -m "add web a[0K[?25hp[0Kp[0K"[0K[?25l
+[0K[?25h[master afe4400] add web app[0K[?25l
+ 131 files changed, 2160 insertions(+), 14547 deletions(-)[0K
+ rewrite .Rproj.user/1C9E7A50/console06/INDEX001 (100%)[0K
+ create mode 100644 .Rproj.user/1C9E7A50/pcs/packages-pane.pper[0K
+ create mode 100644 .Rproj.user/1C9E7A50/sources/prop/32A76CE0[0K
+ create mode 100644 .Rproj.user/1C9E7A50/sources/prop/95025B8[0K
+ create mode 100644 .Rproj.user/1C9E7A50/sources/prop/A329E905[0K
+ create mode 100644 .Rproj.user/1C9E7A50/sources/prop/C8D8A001[0K
+ create mode 100644 .Rproj.user/1C9E7A50/sources/prop/D3AFD765[0K
+ create mode 100644 .Rproj.user/1C9E7A50/sources/prop/DD44D025[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/sources/s-89E82A3/37B8A32F-contents[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/sources/s-89E82A3/3EB2C201-contents[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/sources/s-89E82A3/629BEA69-contents[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/sources/s-89E82A3/8DB55FDA-contents[0K
+ create mode 100644 .Rproj.user/1C9E7A50/sources/s-A5BA2A79/C4FAA1FB[0K
+ create mode 100644 .Rproj.user/1C9E7A50/sources/s-A5BA2A79/C4FAA1FB-contents[0K
+ rename .Rproj.user/1C9E7A50/sources/{s-89E82A3 => s-A5BA2A79}/F3C66F4D (77%)[0K
+ rename .Rproj.user/1C9E7A50/sources/{s-89E82A3 => s-A5BA2A79}/F3C66F4D-contents (88%)[0K
+ rename .Rproj.user/1C9E7A50/sources/{s-89E82A3 => s-A5BA2A79}/lock_file (100%)[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/current_index[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/history_entries[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/index.html[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/crosstalk-1.0.0/css/cr[0Ko
+sstalk.css[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/crosstalk-1.0.0/js/cro[0Ks
+stalk.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/crosstalk-1.0.0/js/cro[0Ks
+stalk.js.map[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/crosstalk-1.0.0/js/cro[0Ks
+stalk.min.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/crosstalk-1.0.0/js/cro[0Ks
+stalk.min.js.map[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/htmlwidgets-1.2/htmlwi[0Kd
+gets.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/jquery-1.11.3/jquery-A[0KU
+THORS.txt[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/jquery-1.11.3/jquery.j[0Ks
+[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/jquery-1.11.3/jquery.m[0Ki
+n.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/jquery-1.11.3/jquery.m[0Ki
+n.map[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/colourpicker/LICENSE[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/colourpicker/colourpicker.min.css[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/colourpicker/colourpicker.min.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/mathjax/cdn.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/LICENSE[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/af.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/am.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/ar-dz.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/ar-eg.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/ar.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/az.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/bg.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/bs.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/ca.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/cs.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/da.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/de-ch.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/de.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/el.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/eo.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/es-ar.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/es-pe.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/es.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/et.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/eu.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/fa.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/fi.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/fo.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/fr-ch.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/fr.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/gl.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/gu.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/he.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/hi-in.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/hr.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/hu.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/hy.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/id.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/is.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/it.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/ja.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/ka.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/km.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/ko.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/lt.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/lv.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/me-me.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/me.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/mk.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/ml.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/ms.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/mt.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/nl-be.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/nl.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/no.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/pa.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/pl.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/pt-br.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/rm.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/ro.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/ru.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/sk.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/sl.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/sq.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/sr-sr.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/sr.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/sv.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/sw.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/ta.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/th.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/tr.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/tt.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/uk.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/ur.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/vi.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/zh-cn.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/zh-hk.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/locales/zh-tw.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/plotly-htmlwidgets.css[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/plotlyjs/plotly-latest.min.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/selectize/selectize.bootstrap3.css[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/selectize/selectize.min.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/typedarray/LICENSE[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/l[0Ki
+b/typedarray/typedarray.min.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/p[0Kl
+otly.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-binding-4.8.0/p[0Kl
+otly.yaml[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-htmlwidgets-css[0K-
+1.39.2/plotly-htmlwidgets.css[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/plotly-main-1.39.2/plo[0Kt
+ly-latest.min.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml21a03af44ad1/lib/typedarray-0.1/typedar[0Kr
+ay.min.js[0K
+ create mode 100644 TAC-seq-gene-expression/app.R[0K
+ rename .Rproj.user/1C9E7A50/sources/s-89E82A3/D852D447-contents => TAC-seq-gene-expression/targets.tsv[0K
+(100%)[0K
+ create mode 100644 data/READY4_UMI1.tsv[0K
+[0K[?25h[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25hu[0Kl[0K[?25ll[0K[10G[?25h[11G[?25l
+[0K[?25hremote: Enumerating objects: 5, done.[0K[?25l
+remote: Counting objects: 100% (5/5), done.[0K
+remote: Compressing objects: 100% (3/3), done.[0K
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0[0K
+[0K[?25h[?25lUnpacking objects:  33% (1/3)[0K[1G[?25hUnpacking objects: 100% (3/3), done.[0K[?25l
+[0K[?25hFrom https://github.com/cchtEE/TAC-seq-gene-expression[0K[?25l
+   7a38a19..95bfdf4  master     -> origin/master[0K
+[0K[?25hMerge made by the 'recursive' strategy.[0K[?25l
+[0K[?25h README.md | 15 [0;32m+++++++++++++++[0m[0K[?25l
+ 1 file changed, 15 insertions(+)[0K
+[0K[?25h[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25hu[0Ks[0Kh[0K[?25l
+[0K[?25hCounting objects: 31, done.[0K[?25l
+Delta compression using up to 4 threads.[0K
+Compressing objects:  34% (10/29)[0K[1G[?25hCompressing objects: 100% (29/29), done.[0K[?25l
+Writing objects:  67% (21/31)[0K[1G[?25hWriting objects: 100% (31/31), 18.88 KiB | 878.00 KiB/s, done.[0K[?25l
+Total 31 (delta 6), reused 0 (delta 0)[0K
+[0K[?25hremote: Resolving deltas: 100% (6/6), completed with 3 local objects.[0K[?25l
+[0K[?25hTo https://github.com/cchtEE/TAC-seq-gene-expression.git[0K[?25l
+   95bfdf4..d10a7aa  master -> master[0K
+[0K[?25h[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+$[0K[3G[?25h[0m[0K]0;:/c/Users/hindr/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+[?25l$ git p[0K[?25hu[0Kl[0Kl[0K[?25l
+[0K[?25hAlready up to date.[0K[?25l
+[0K[?25h[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add -[0K[?25h-[0Ka[0Kl[0Kl[0K[?25l
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/debug-breakpoints.pper.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/files-pane.pper.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/packages-pane.pper.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/source-pane.pper.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/windowlayoutstate.pper.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/workbench-pane.pper.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/rmd-outputs.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/32A76CE0.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/BCF51075.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-85ECC18/C4FAA1FB.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-85ECC18/C4FAA1FB-contents.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-85ECC18/F3C66F4D.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-85ECC18/F3C66F4D-contents.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25h[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git s[0K[?25ht[0Ka[0Kt[0Ku[0Ks[0K[?25l
+[0K[?25hOn branch master[0K[?25l
+Your branch is up to date with 'origin/master'.[0K
+[0K
+Changes to be committed:[0K
+  (use "git reset HEAD <file>..." to unstage)[0K
+[0K
+        [0;32mmodified:   .Rproj.user/1C9E7A50/console06/91694022[0m[0K
+        [0;32mmodified:   .Rproj.user/1C9E7A50/console06/INDEX001[0m[0K
+        [0;32mmodified:   .Rproj.user/1C9E7A50/pcs/packages-pane.pper[0m[0K
+        [0;32mmodified:   .Rproj.user/1C9E7A50/pcs/workbench-pane.pper[0m[0K
+        [0;32mmodified:   .Rproj.user/1C9E7A50/sources/prop/32A76CE0[0m[0K
+        [0;32mmodified:   .Rproj.user/1C9E7A50/sources/prop/BCF51075[0m[0K
+        [0;32mrenamed:    .Rproj.user/1C9E7A50/sources/s-A5BA2A79/C4FAA1FB -> .Rproj.user/1C9E7A50/sources/s-[0K8
+5ECC18/C4FAA1FB[0m[0K
+        [0;32mrenamed:    .Rproj.user/1C9E7A50/sources/s-A5BA2A79/C4FAA1FB-contents -> .Rproj.user/1C9E7A50/s[0Ko
+urces/s-85ECC18/C4FAA1FB-contents[0m[0K
+        [0;32mrenamed:    .Rproj.user/1C9E7A50/sources/s-A5BA2A79/F3C66F4D -> .Rproj.user/1C9E7A50/sources/s-[0K8
+5ECC18/F3C66F4D[0m[0K
+        [0;32mrenamed:    .Rproj.user/1C9E7A50/sources/s-A5BA2A79/F3C66F4D-contents -> .Rproj.user/1C9E7A50/s[0Ko
+urces/s-85ECC18/F3C66F4D-contents[0m[0K
+        [0;32mrenamed:    .Rproj.user/1C9E7A50/sources/s-A5BA2A79/lock_file -> .Rproj.user/1C9E7A50/sources/s[0K-
+85ECC18/lock_file[0m[0K
+        [0;32mmodified:   TAC-seq-gene-expression.R[0m[0K
+        [0;32mmodified:   TAC-seq-gene-expression/app.R[0m[0K
+[0K
+Changes not staged for commit:[0K
+  (use "git add <file>..." to update what will be committed)[0K
+  (use "git checkout -- <file>..." to discard changes in working directory)[0K
+[0K
+        [0;31mmodified:   .Rproj.user/1C9E7A50/console06/91694022[0m[0K
+[0K
+[0K[?25h[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add -[0K[?25h-[0Ka[0Kl[0Kl[0K[?25l
 [0K[?25h
