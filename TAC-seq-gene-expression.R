@@ -8,7 +8,8 @@ library(pheatmap)
 targets <- read_tsv("TAC-seq-gene-expression/data/targets/READY_targets.tsv")
 controls <- read_tsv("TAC-seq-gene-expression/data/controls/READY_controls.tsv")
 
-df <- read_tsv("TAC-seq-gene-expression/data/counts/TAC-seq_counts.tsv") %>%
+# df <- read_tsv("TAC-seq-gene-expression/data/counts/TAC-seq_counts.tsv") %>%
+df <- read_tsv("READY5_UMI1.tsv") %>%
   filter(
     !str_detect(sample, "Undetermined"),  # remove undetermined samples
     locus != "unmatched"  # remove unmatched loci
@@ -56,36 +57,38 @@ lst <- df %>%
   map(column_to_rownames, "locus") %>%
   map(as.matrix)
 
-bm_raw <- lst$biomarker
-hk_raw <- lst$housekeeper
+bm <- lst$biomarker
+hk <- lst$housekeeper
 
-norm_factor <- exp(apply(log(hk_raw), 2, mean))  # geometric mean of housekeepers
-bm_norm <- sweep(bm_raw, 2, norm_factor, "/")
+norm_factor <- exp(apply(log(hk), 2, mean))  # geometric mean of housekeepers
+bm <- sweep(bm, 2, norm_factor, "/")
 
 # remove housekeeper outliers ---------------------------------------------
 
 hk_zeros <- which(norm_factor == 0)
 if (length(hk_zeros) > 0) {
-  bm_norm <- bm_norm[, -hk_zeros]
+  bm <- bm[, -hk_zeros]
   cat("removed sample(s) where geometric mean of housekeeping genes is zero:", names(hk_zeros), sep = "\n")
 }
 
 # plot PCA ----------------------------------------------------------------
 
-test_ctrl <- bm_norm %>%
+df <- bm %>%
   t() %>%
   as_tibble(rownames = "sample") %>%
   bind_rows(controls)
 
-pca <- test_ctrl %>%
+mat <- df %>%
   select(-label) %>%
   column_to_rownames("sample") %>%
-  as.matrix() %>%
+  as.matrix()
+
+pca <- mat %>%
   prcomp(scale. = T)
 
 pca$x %>%
   as_tibble(rownames = "sample") %>%
-  left_join(test_ctrl) %>%
+  left_join(df) %>%
   ggplot(aes(PC1, PC2, color = label, group = sample)) +
   geom_point() +
   labs(title = "Biomarkers", subtitle = "normalized molecule counts")
@@ -93,5 +96,5 @@ ggplotly()
 
 # plot heatmap ------------------------------------------------------------
 
-bm_norm[bm_norm == 0] <- NA  # replace 0 with NA
-pheatmap(log(bm_norm), scale = "row", main = "Biomarkers", treeheight_row = 0)
+mat[mat == 0] <- NA  # replace 0 with NA
+pheatmap(log(t(mat)), scale = "row", main = "Biomarkers", treeheight_row = 0)
