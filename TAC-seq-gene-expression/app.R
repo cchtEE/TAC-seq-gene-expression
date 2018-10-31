@@ -6,7 +6,8 @@ library(plotly)
 library(pheatmap)
 
 
-targets <- read_tsv("data/targets.tsv")
+targets <- read_tsv("data/targets/READY_targets.tsv")
+reference <- read_tsv("data/controls/READY_controls.tsv")
 
 ui <- dashboardPage(
   dashboardHeader(title = "TAC-seq gene expression", titleWidth = 275),
@@ -26,6 +27,8 @@ ui <- dashboardPage(
         h1("Input"),
         p("Use TAC-seq data analysis output file as an input."),
         fileInput("file", label = "Choose a file", accept = "text"),
+        plotOutput("biomarkers"),
+        h2("Raw data"),
         dataTableOutput("table")
       ),
       tabItem(
@@ -41,7 +44,7 @@ ui <- dashboardPage(
         plotOutput("housekeepers"),
         h2("Normalized data"),
         p("Samples, which geometric mean of housekeeping genes is zero, are removed."),
-        dataTableOutput("norm_counts"),
+        dataTableOutput("bm_norm"),
         downloadButton("download", "Download normalized data")
       ),
       tabItem(
@@ -70,6 +73,17 @@ server <- function(input, output) {
     data()
   })
 
+  output$biomarkers <- renderPlot({
+    data() %>%
+      filter(type == "biomarker") %>%
+      ggplot(aes(sample, molecule_count)) +
+      geom_boxplot() +
+      geom_point(aes(color = locus)) +
+      scale_y_log10() +
+      labs(title = "Biomarkers", subtitle = "raw molecule counts", y = "molecule count") +
+      theme(axis.text.x = element_text(vjust = 0.5, angle = 90))
+  })
+
   output$spike_ins <- renderPlot({
     data() %>%
       filter(type == "spike_in") %>%
@@ -90,7 +104,7 @@ server <- function(input, output) {
       theme(axis.text.x = element_text(vjust = 0.5, angle = 90))
   })
 
-  norm_counts <- reactive({
+  bm_norm <- reactive({
     # normalize molecule counts -----------------------------------------------
 
     lst <- data() %>%
@@ -105,37 +119,38 @@ server <- function(input, output) {
     hk <- lst$housekeeper
 
     hk_geo_means <- exp(apply(log(hk), 2, mean))
-    norm_counts <- sweep(bm, 2, hk_geo_means, "/")
+    bm_norm <- sweep(bm, 2, hk_geo_means, "/")
 
     # remove housekeeper outliers ---------------------------------------------
 
     hk_zeros <- which(hk_geo_means == 0)
     if (length(hk_zeros) > 0) {
-      norm_counts <- norm_counts[, -hk_zeros]
+      bm_norm <- bm_norm[, -hk_zeros]
     }
 
-    t(norm_counts)
+    t(bm_norm)
   })
 
-  output$norm_counts <- renderDataTable({
-    norm_counts()
+  output$bm_norm <- renderDataTable({
+    bm_norm()
   })
 
   output$download <- downloadHandler(
-    filename = "norm_counts.tsv",
+    filename = "normalized_counts.tsv",
     content = function(file) {
-      norm_counts() %>%
+      bm_norm() %>%
         as_tibble(rownames = "sample") %>%
         write_tsv(file)
     }
   )
 
   output$pca <- renderPlotly({
-    pca_norm <- norm_counts() %>%
+    pca_norm <- bm_norm() %>%
       prcomp(scale. = T)
 
     pca_norm$x %>%
       as_tibble(rownames = "sample") %>%
+      right_join()
       ggplot(aes(PC1, PC2, color = sample)) +
       geom_point() +
       labs(title = "Biomarkers")
