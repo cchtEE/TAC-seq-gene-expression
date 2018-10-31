@@ -8,8 +8,7 @@ library(pheatmap)
 targets <- read_tsv("TAC-seq-gene-expression/data/targets/READY_targets.tsv")
 controls <- read_tsv("TAC-seq-gene-expression/data/controls/READY_controls.tsv")
 
-# df <- read_tsv("TAC-seq-gene-expression/data/counts/TAC-seq_counts.tsv") %>%
-df <- read_tsv("READY5_UMI1.tsv") %>%
+df <- read_tsv("TAC-seq-gene-expression/data/counts/TAC-seq_counts.tsv") %>%
   filter(
     !str_detect(sample, "Undetermined"),  # remove undetermined samples
     locus != "unmatched"  # remove unmatched loci
