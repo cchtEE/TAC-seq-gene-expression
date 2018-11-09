@@ -3,15 +3,19 @@ This repository contains TAC-seq gene expression data analysis software.
 
 ## Input
 * [TAC-seq data analysis](https://github.com/cchtEE/TAC-seq-data-analysis) output file with:
-  * column `sample`
-  * column `locus`
-  * column `molecule_count`
+  * column `sample` - sample ID
+  * column `locus` - locus ID
+  * column `molecule_count` - molecule count
   
 * Target file with:
-  * column `id` - values have to match with `locus` values in [TAC-seq data analysis](https://github.com/cchtEE/TAC-seq-data-analysis) output file
+  * column `target` - values have to match with `locus` values in [TAC-seq data analysis](https://github.com/cchtEE/TAC-seq-data-analysis) output file
   * column `type` - possible values: `biomarker`, `housekeeper` or `spike_in`
+
+* Control file with:
+  * column `sample` - sample ID
+  * column `label` - class label
 
 ## Output
 Normalized count table with:
-* column `sample`
-* column for each target `id`
+* column `sample` - sample ID
+* column for each `target`
