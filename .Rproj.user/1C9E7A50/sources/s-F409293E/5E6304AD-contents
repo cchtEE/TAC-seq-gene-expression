@@ -107,9 +107,9 @@ server <- function(input, output) {
       try(
         targets <- input$targets$datapath %>%
           read_tsv() %>%
-          select(id, type)
+          select(target, type)
       ),
-      "Incorrect target file. Please choose correct target file with columns \"id\" and \"type\"."
+      "Incorrect target file. Please choose correct target file with columns \"target\" and \"type\"."
     ))
     targets
   })
@@ -125,14 +125,14 @@ server <- function(input, output) {
     req(input$controls)
     bm <- targets() %>%
       filter(type == "biomarker") %>%
-      pull(id)
+      pull(target)
     validate(need(
       try(
         controls <- input$controls$datapath %>%
           read_tsv() %>%
           select(sample, label, !!bm)
       ),
-      "Incorrect control file. Please choose correct control file with columns \"sample\", \"label\" and column for each target \"id\"."
+      "Incorrect control file. Please choose correct control file with columns \"sample\", \"label\" and column for each \"target\"."
     ))
     controls
   })
@@ -143,7 +143,7 @@ server <- function(input, output) {
 
   data <- reactive(
     counts() %>%
-      left_join(targets(), by = c("locus" = "id"))
+      left_join(targets(), by = c("locus" = "target"))
   )
 
   output$data <- renderDataTable(data())
@@ -274,6 +274,12 @@ server <- function(input, output) {
         labs(title = "Biomarkers")
     }
     ggplotly()
+
+    output$heatmap <- renderPlot({
+      mat <- bm()
+      mat[mat == 0] <- NA  # replace 0 with NA
+      pheatmap(log(t(mat)), scale = "row", main = "Biomarkers", treeheight_row = 0)
+    })
   })
 
 }

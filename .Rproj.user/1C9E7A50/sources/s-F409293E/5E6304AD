@@ -5,16 +5,16 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "4198055693",
+    "hash" : "0",
     "id" : "5E6304AD",
-    "lastKnownWriteTime" : 1541725068,
-    "last_content_update" : 1541725068864,
+    "lastKnownWriteTime" : 1541755017,
+    "last_content_update" : 1541755017510,
     "path" : "C:/Users/hindr/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression/TAC-seq-gene-expression/app.R",
     "project_path" : "TAC-seq-gene-expression/app.R",
     "properties" : {
-        "cursorPosition" : "12,48",
+        "cursorPosition" : "134,121",
         "docOutlineVisible" : "0",
-        "scrollLine" : "0"
+        "scrollLine" : "100"
     },
     "relative_order" : 2,
     "source_on_save" : false,

@@ -15,7 +15,7 @@ df <- list.files("TAC-seq-gene-expression/data/counts/", full.names = T) %>%
     !str_detect(sample, "Undetermined"),  # remove undetermined samples
     locus != "unmatched"  # remove unmatched loci
   ) %>%
-  left_join(targets, by = c("locus" = "id"))
+  left_join(targets, by = c("locus" = "target"))
 
 # plot biomarkers ---------------------------------------------------------
 
