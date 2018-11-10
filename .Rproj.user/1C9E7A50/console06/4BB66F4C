@@ -1016,4 +1016,83 @@ Fast-forward[0K
 [0K[?25h[?25l
 [0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
 $[0K[3G[?25h[?25l$ g[0K[?25hi[0K[?25lt[0K[5G[?25h[6G[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add -[0K[?25h-[0Ka[0Kl[0Kl[0K[?25l
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/files-pane.pper.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/windowlayoutstate.pper.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/workbench-pane.pper.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/32A76CE0.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/85022655.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/BCF51075.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/BFCFE3FF.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/shared/notebooks/paths.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25h[?25lwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-F409293E/373B80FF-contents.[0K[1G[?25h[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-F409293E/4676D4D1-contents.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-F409293E/5E6304AD.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-F409293E/5E6304AD-contents.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-F409293E/7E609099-contents.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-F409293E/F3C66F4D.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-F409293E/F3C66F4D-contents.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25h[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[14G[?25l$ git commit -[0K[14G[?25h[15G[16G[15G[?25l$ git commit -m[0K[?25h[17G[?25l$ git commit -m "[0K[?25h[?25lu[0K[18G[?25h[19G[?25l$ git commit -m "up[0K[?25hd[0Ka[0Kt[0Ke[0K[25G[?25l$ git commit -m "update t[0K[?25ha[0Kr[0Kg[0Ke[0Kt[0K[32G[?25l$ git commit -m "update target v[0K[?25ha[0Kr[0K[?25li[0K[35G[?25h[36G[?25l$ git commit -m "update target varia[0K[?25hb[0Kl[0Ke[0K"[0K[?25l
+[0K[?25h[master a80d8cb] update target variable[0K[?25l
+ 20 files changed, 567 insertions(+), 44 deletions(-)[0K
+ rewrite .Rproj.user/1C9E7A50/console06/INDEX001 (86%)[0K
+ create mode 100644 .Rproj.user/1C9E7A50/sources/s-F409293E/373B80FF-contents[0K
+ create mode 100644 .Rproj.user/1C9E7A50/sources/s-F409293E/4676D4D1-contents[0K
+ rename .Rproj.user/1C9E7A50/sources/{s-7A8FC852 => s-F409293E}/5E6304AD (74%)[0K
+ rename .Rproj.user/1C9E7A50/sources/{s-7A8FC852 => s-F409293E}/5E6304AD-contents (95%)[0K
+ create mode 100644 .Rproj.user/1C9E7A50/sources/s-F409293E/7E609099-contents[0K
+ rename .Rproj.user/1C9E7A50/sources/{s-7A8FC852 => s-F409293E}/F3C66F4D (82%)[0K
+ rename .Rproj.user/1C9E7A50/sources/{s-7A8FC852 => s-F409293E}/F3C66F4D-contents (98%)[0K
+ rename .Rproj.user/1C9E7A50/sources/{s-7A8FC852 => s-F409293E}/lock_file (100%)[0K
+[0K[?25h[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+      7 [main] cut (5212) C:\cygwin64\bin\cut.exe: *** fatal error - cygheap base mismatch detected - 0x[0K1[?25l
+80301410/0x18031B410.[0K
+This problem is probably due to using incompatible versions of the cygwin DLL.[0K
+Search for cygwin1.dll using the Windows Start->Find/Search facility[0K
+and delete all but the most recent version.  The most recent version *should*[0K
+reside in x:\cygwin\bin, where 'x' is the drive on which you have[0K
+installed the cygwin distribution.  Rebooting is also suggested if you[0K
+are unable to find another cygwin DLL.[0K
+[0K[?25h[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+$[0K[2A[?25h]0;:/c/Users/hindr/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[?25l
+
+      7 [main] cut (3184) C:\cygwin64\bin\cut.exe: *** fatal error - cygheap base mismatch detected - 0x[0K1[?25l
+80301410/0x18031B410.[0K
+This problem is probably due to using incompatible versions of the cygwin DLL.[0K
+Search for cygwin1.dll using the Windows Start->Find/Search facility[0K
+and delete all but the most recent version.  The most recent version *should*[0K
+reside in x:\cygwin\bin, where 'x' is the drive on which you have[0K
+installed the cygwin distribution.  Rebooting is also suggested if you[0K
+are unable to find another cygwin DLL.[0K
+[0K[?25h]0;:/c/Users/hindr/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+      7 [main] cut (16388) C:\cygwin64\bin\cut.exe: *** fatal error - cygheap base mismatch detected - 0[0Kx[?25l
+180301410/0x18031B410.[0K
+This problem is probably due to using incompatible versions of the cygwin DLL.[0K
+Search for cygwin1.dll using the Windows Start->Find/Search facility[0K
+and delete all but the most recent version.  The most recent version *should*[0K
+reside in x:\cygwin\bin, where 'x' is the drive on which you have[0K
+installed the cygwin distribution.  Rebooting is also suggested if you[0K
+are unable to find another cygwin DLL.[0K
+[0K[?25h]0;:/c/Users/hindr/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git c[0K[?25ho[0K[?25l$ git c[0K[?25h[?25l$ git[0K[7G[?25h[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add -[0K[?25h-[0Ka[0Kl[0Kl[0K[?25l
 [0K[?25h

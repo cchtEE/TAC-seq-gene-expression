@@ -1,16 +1,9 @@
-# TODO:
-# * pre-determined target and control lists
-
-
 library(shiny)
 library(shinydashboard)
 library(DT)
 library(tidyverse)
 library(plotly)
 
-
-# targets <- "data/targets/READY_targets.tsv"
-# controls <- "data/controls/READY_controls.tsv"
 
 ui <- dashboardPage(
   dashboardHeader(title = "TAC-seq gene expression", titleWidth = 275),
@@ -20,7 +13,16 @@ ui <- dashboardPage(
       menuItem("Input", tabName = "input"),
       menuItem("Quality control", tabName = "qc"),
       menuItem("Normalization", tabName = "norm"),
-      menuItem("Results", tabName = "results")
+      menuItem("Results", tabName = "results"),
+      tags$a(href = "https://github.com/cchtEE/TAC-seq-gene-expression", "GitHub", align = "center", style = "
+              position:absolute;
+              bottom:0;
+              width:100%;
+              height:40px;   /* Height of the footer */
+              color: white;
+              padding: 10px;
+              background-color: black;
+              z-index: 1000;")
     )
   ),
   dashboardBody(
@@ -30,16 +32,16 @@ ui <- dashboardPage(
         h1("Input"),
         p("Use TAC-seq data analysis output file as an input."),
         fileInput("counts", label = "Choose count file(s):", accept = "text", multiple = T),
-        fileInput("targets", label = "Choose target file:", accept = "text"),
-        # selectInput("target", label = "Choose target list:", choices = list(
-        #   "Choose one" = "",
-        #   "beREADY targets" = targets
-        # )),
-        # selectInput("control_lst", label = "Choose control list:", choices = list(
-        #   "Choose one" = "",
-        #   "beREADY controls" = controls
-        # )),
-        fileInput("controls", label = "Choose control file (optional):", accept = "text"),
+        selectInput("target_list", label = "Choose target list or file:", choices = list(
+          "Choose one" = "",
+          "READY targets" = "data/targets/READY_targets.tsv"
+        )),
+        fileInput("target_file", label = "", accept = "text"),
+        selectInput("control_list", label = "Choose control list or file (optional):", choices = list(
+          "Choose one" = "",
+          "READY controls" = "data/controls/READY_controls.tsv"
+        )),
+        fileInput("control_file", label = "", accept = "text"),
         plotOutput("biomarkers"),
         h2("Targets"),
         tableOutput("targets"),
@@ -102,16 +104,22 @@ server <- function(input, output) {
 # targets -----------------------------------------------------------------
 
   targets <- reactive({
-    req(input$targets)
-    validate(need(
-      try(
-        targets <- input$targets$datapath %>%
-          read_tsv() %>%
-          select(target, type)
-      ),
-      "Incorrect target file. Please choose correct target file with columns \"target\" and \"type\"."
-    ))
-    targets
+    if (isTruthy(input$target_file)) {
+      validate(need(
+        try(
+          targets <- input$target_file$datapath %>%
+            read_tsv() %>%
+            select(target, type)
+        ),
+        "Incorrect target file. Please choose correct target file with columns \"target\" and \"type\"."
+      ))
+      targets
+    } else if (isTruthy(input$target_list)) {
+      input$target_list %>%
+        read_tsv()
+    } else {
+      req(FALSE)
+    }
   })
 
   output$targets <- renderTable(
@@ -122,19 +130,27 @@ server <- function(input, output) {
 # controls ----------------------------------------------------------------
 
   controls <- reactive({
-    req(input$controls)
     bm <- targets() %>%
       filter(type == "biomarker") %>%
       pull(target)
-    validate(need(
-      try(
-        controls <- input$controls$datapath %>%
-          read_tsv() %>%
-          select(sample, label, !!bm)
-      ),
-      "Incorrect control file. Please choose correct control file with columns \"sample\", \"label\" and column for each \"target\"."
-    ))
-    controls
+
+    if (isTruthy(input$control_file)) {
+      validate(need(
+        try(
+          controls <- input$control_file$datapath %>%
+            read_tsv() %>%
+            select(sample, label, !!bm)
+        ),
+        "Incorrect control file. Please choose correct control file with columns \"sample\", \"label\" and column for each \"target\"."
+      ))
+      controls
+    } else if (isTruthy(input$control_list)) {
+      input$control_list %>%
+        read_tsv() %>%
+        select(sample, label, !!bm)
+    } else {
+      req(FALSE)
+    }
   })
 
   output$controls <- renderDataTable(controls())
@@ -148,7 +164,7 @@ server <- function(input, output) {
 
   output$data <- renderDataTable(data())
 
-# plot biomarkers ---------------------------------------------------------
+# biomarkers --------------------------------------------------------------
 
   output$biomarkers <- renderPlot(
     data() %>%
@@ -162,7 +178,7 @@ server <- function(input, output) {
       theme(axis.text.x = element_text(vjust = 0.5, angle = 90))
   )
 
-# plot spike-ins ----------------------------------------------------------
+# spike-ins ---------------------------------------------------------------
 
   output$spike_ins <- renderPlot(
     data() %>%
@@ -175,7 +191,7 @@ server <- function(input, output) {
       theme(axis.text.x = element_text(vjust = 0.5, angle = 90))
   )
 
-# plot housekeepers -------------------------------------------------------
+# housekeepers ------------------------------------------------------------
 
   output$housekeepers <- renderPlot(
     data() %>%
@@ -188,7 +204,7 @@ server <- function(input, output) {
       theme(axis.text.x = element_text(vjust = 0.5, angle = 90))
   )
 
-# normalize biomarkers ----------------------------------------------------
+# normalization -----------------------------------------------------------
 
   bm <- reactive({
     validate(need(
@@ -229,6 +245,8 @@ server <- function(input, output) {
     bm()
   })
 
+# download ----------------------------------------------------------------
+
   output$download <- renderUI({
     req(bm())
     downloadButton("file", "Download normalized data")
@@ -243,8 +261,10 @@ server <- function(input, output) {
     }
   )
 
+# PCA ---------------------------------------------------------------------
+
   output$pca <- renderPlotly({
-    if (isTruthy(input$controls)) {
+    if (isTruthy(controls())) {
       df <- bm() %>%
         as_tibble(rownames = "sample") %>%
         bind_rows(controls())
@@ -274,12 +294,6 @@ server <- function(input, output) {
         labs(title = "Biomarkers")
     }
     ggplotly()
-
-    output$heatmap <- renderPlot({
-      mat <- bm()
-      mat[mat == 0] <- NA  # replace 0 with NA
-      pheatmap(log(t(mat)), scale = "row", main = "Biomarkers", treeheight_row = 0)
-    })
   })
 
 }
