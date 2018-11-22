@@ -3,6 +3,7 @@ library(shinydashboard)
 library(DT)
 library(tidyverse)
 library(plotly)
+library(pheatmap)
 
 
 ui <- dashboardPage(
@@ -13,7 +14,7 @@ ui <- dashboardPage(
       menuItem("Input", tabName = "input"),
       menuItem("Quality control", tabName = "qc"),
       menuItem("Normalization", tabName = "norm"),
-      menuItem("Results", tabName = "results"),
+      menuItem("Visualization", tabName = "visual"),
       tags$a(href = "https://github.com/cchtEE/TAC-seq-gene-expression", "GitHub", align = "center", style = "
               position:absolute;
               bottom:0;
@@ -69,10 +70,11 @@ ui <- dashboardPage(
         uiOutput("download")
       ),
       tabItem(
-        tabName = "results",
-        h1("Results"),
+        tabName = "visual",
+        h1("Visualization"),
         p("Visualizing the normalized molecule counts of targeted biomarkers."),
-        plotlyOutput("pca")
+        plotlyOutput("pca"),
+        plotOutput("heatmap")
       )
     )
   )
@@ -149,7 +151,7 @@ server <- function(input, output) {
         read_tsv() %>%
         select(sample, label, !!bm)
     } else {
-      req(FALSE)
+      return(NULL)
     }
   })
 
@@ -207,6 +209,7 @@ server <- function(input, output) {
 # normalization -----------------------------------------------------------
 
   bm <- reactive({
+    if (isTruthy(data()))
     validate(need(
       try(
         lst <- data() %>%
@@ -294,6 +297,23 @@ server <- function(input, output) {
         labs(title = "Biomarkers")
     }
     ggplotly()
+  })
+
+# heatmap -----------------------------------------------------------------
+
+  output$heatmap <- renderPlot({
+    if (isTruthy(controls())) {
+      mat <- bm() %>%
+        as_tibble(rownames = "sample") %>%
+        bind_rows(controls()) %>%
+        select(-label) %>%
+        column_to_rownames("sample") %>%
+        as.matrix()
+    } else {
+      mat <- bm()
+    }
+    mat[mat == 0] <- NA  # replace 0 with NA
+    pheatmap(log(t(mat)), scale = "row", treeheight_row = 0)
   })
 
 }

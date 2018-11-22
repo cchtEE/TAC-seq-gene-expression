@@ -1,271 +1,4 @@
 
-and delete all but the most recent version.  The most recent version *should*[0K
-reside in x:\cygwin\bin, where 'x' is the drive on which you have[0K
-installed the cygwin distribution.  Rebooting is also suggested if you[0K
-are unable to find another cygwin DLL.[0K
-[0K[?25h]0;:/c/Users/hindr/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ l[0K[?25hl[0K[?25l
-bash: ll: command not found[0K
-[0K[?25h[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ l[0K[?25hs[0K[?25l
-[0K[?25h      9 [main] ls (5680) C:\cygwin64\bin\ls.exe: *** fatal error - cygheap base mismatch detected - 0x180301410/0x18031B410.[0K[?25l
-This problem is probably due to using incompatible versions of the cygwin DLL.[0K
-Search for cygwin1.dll using the Windows Start->Find/Search facility[0K
-and delete all but the most recent version.  The most recent version *should*[0K
-reside in x:\cygwin\bin, where 'x' is the drive on which you have[0K
-installed the cygwin distribution.  Rebooting is also suggested if you[0K
-are unable to find another cygwin DLL.[0K
-[0K[?25h[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[?25l
-[0K[?25husage: git [--version] [--help] [-C <path>] [-c name=value][0K[?25l
-           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path][0K
-           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare][0K
-           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>][0K
-           <command> [<args>][0K
-[0K
-These are common Git commands used in various situations:[0K
-[0K
-start a working area (see also: git help tutorial)[0K
-   clone      Clone a repository into a new directory[0K
-   init       Create an empty Git repository or reinitialize an existing one[0K
-[0K
-work on the current change (see also: git help everyday)[0K
-   add        Add file contents to the index[0K
-   mv         Move or rename a file, a directory, or a symlink[0K
-   reset      Reset current HEAD to the specified state[0K
-   rm         Remove files from the working tree and from the index[0K
-[0K
-examine the history and state (see also: git help revisions)[0K
-   bisect     Use binary search to find the commit that introduced a bug[0K
-   grep       Print lines matching a pattern[0K
-   log        Show commit logs[0K
-   show       Show various types of objects[0K
-   status     Show the working tree status[0K
-[0K
-grow, mark and tweak your common history[0K
-   branch     List, create, or delete branches[0K
-   checkout   Switch branches or restore working tree files[0K
-   commit     Record changes to the repository[0K
-   diff       Show changes between commits, commit and working tree, etc[0K
-   merge      Join two or more development histories together[0K
-   rebase     Reapply commits on top of another base tip[0K
-   tag        Create, list, delete or verify a tag object signed with GPG[0K
-[0K
-collaborate (see also: git help workflows)[0K
-   fetch      Download objects and refs from another repository[0K
-   pull       Fetch from and integrate with another repository or a local branch[0K
-   push       Update remote refs along with associated objects[0K
-[0K
-'git help -a' and 'git help -g' list available subcommands and some[0K
-concept guides. See 'git help <command>' or 'git help <concept>'[0K
-to read about a specific subcommand or concept.[0K
-[0K[?25h[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K[23G[?25h[?25l
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git s[0K[?25h[?25lt[0K[8G[?25h[9G[?25l$ git sta[0K[?25ht[0Ku[0Ks[0K[?25l
-[0K[?25hOn branch master[0K[?25l
-Your branch is up to date with 'origin/master'.[0K
-[0K
-Changes not staged for commit:[0K
-  (use "git add/rm <file>..." to update what will be committed)[0K
-  (use "git checkout -- <file>..." to discard changes in working directory)[0K
-[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/console06/91694022[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/console06/INDEX001[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/pcs/files-pane.pper[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/pcs/source-pane.pper[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/pcs/workbench-pane.pper[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/sources/prop/32A76CE0[0m[0K[?25h[?25l
-        [0;31mmodified:   .Rproj.user/1C9E7A50/sources/prop/BCF51075[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/sources/prop/INDEX[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/17979F02-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/1A05FD77-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/2760DC51-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/34838E08-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/39AD73B3-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/528CB922-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/6322D8B7-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/71264429-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/768F631C-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/78179048-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/7A0570D9-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/7BB995AC-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/7DBB2594-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/7FB3B34F-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/89E4049C-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/8F4642E3-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/99B16B74-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/99F3B19B-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/9DD8D9AC-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/A9BFD961-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/B0A8F748-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/BFCD67E5-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/C4FAA1FB[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/C4FAA1FB-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/C726127A[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/C726127A-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/D2FF0F8F-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/DBF2EF14-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/DEACD96D-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/E2F447F6-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/E87ECE53-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/EA67EBB2-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/F3C66F4D[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/F3C66F4D-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-535021DC/lock_file[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/viewer_history/current_index[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/viewer_history/history_entries[0m[0K
-        [0;31mmodified:   .Rproj.user/shared/notebooks/paths[0m[0K
-        [0;31mmodified:   TAC-seq-gene-expression.R[0m[0K
-        [0;31mmodified:   TAC-seq-gene-expression/app.R[0m[0K
-        [0;31mdeleted:    TAC-seq-gene-expression/data/counts/TAC-seq_counts.tsv[0m[0K
-[0K
-Untracked files:[0K
-  (use "git add <file>..." to include in what will be committed)[0K
-[0K
-        [0;31m.Rproj.user/1C9E7A50/console06/4BB66F4C[0m[0K
-        [0;31m.Rproj.user/1C9E7A50/sources/prop/36EBD7E0[0m[0K
-        [0;31m.Rproj.user/1C9E7A50/sources/prop/4FFF88A2[0m[0K
-        [0;31m.Rproj.user/1C9E7A50/sources/s-F3B87EF7/[0m[0K
-        [0;31m.Rproj.user/1C9E7A50/viewer_history/viewhtml28f82e5b63b3/[0m[0K
-        [0;31mTAC-seq-gene-expression/data/counts/TAC-seq_counts - Copy.tsv[0m[0K
-        [0;31mTAC-seq-gene-expression/data/counts/TAC-seq_counts2 - Copy.tsv[0m[0K
-        [0;31mTAC-seq-gene-expression/data/counts/old/[0m[0K
-        [0;31mreport.html[0m[0K
-[0K
-no changes added to commit (use "git add" and/or "git commit -a")[0K
-[0K[?25h[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[?25l
-[0K[?25hNothing specified, nothing added.[0K[?25l
-Maybe you wanted to say 'git add .'?[0K
-[0K[?25h[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ git add[0K[?25h[11G[?25l$ git add -[0K[?25h-[0Kh[0Ke[0Kl[0Kp[0K[?25l
-[0K[?25h[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G-[0Ka[0Kl[0Kl[0K[?25l
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/files-pane.pper.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/source-pane.pper.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/workbench-pane.pper.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/32A76CE0.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/BCF51075.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/INDEX.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/history_entries.[0K[1G[?25h[?25l
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/shared/notebooks/paths.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/36EBD7E0.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/4FFF88A2.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-F3B87EF7/309B2854-contents.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-F3B87EF7/5E6304AD.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-F3B87EF7/5E6304AD-contents.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-F3B87EF7/75B073B7-contents.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-F3B87EF7/7E3ED6A7-contents.[0K[1G[?25h[?25l
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-F3B87EF7/BCC3045B-contents.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-F3B87EF7/F3C66F4D.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-F3B87EF7/F3C66F4D-contents.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml28f82e5b63b3/lib/crosstalk-1.0.0/css/cross[0Kt[?25l
-alk.css.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml28f82e5b63b3/lib/crosstalk-1.0.0/js/crosst[0Ka[?25l
-lk.js.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml28f82e5b63b3/lib/crosstalk-1.0.0/js/crosst[0Ka
-lk.js.map.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml28f82e5b63b3/lib/crosstalk-1.0.0/js/crosst[0Ka
-lk.min.js.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml28f82e5b63b3/lib/htmlwidgets-1.3/htmlwidge[0Kt
-s.js.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml28f82e5b63b3/lib/jquery-1.11.3/jquery-AUTH[0KO
-RS.txt.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml28f82e5b63b3/lib/jquery-1.11.3/jquery.js.[0K[1G[?25h[?25l
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml28f82e5b63b3/lib/jquery-1.11.3/jquery.min.[0Kj
-s.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml28f82e5b63b3/lib/plotly-binding-4.8.0/plot[0Kl
-y.js.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml28f82e5b63b3/lib/plotly-htmlwidgets-css-1.[0K3[?25l
-9.2/plotly-htmlwidgets.css.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/viewer_history/viewhtml28f82e5b63b3/lib/plotly-main-1.39.2/plotly[0K-
-latest.min.js.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25h[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[14G[?25l$ git commit -[0K[?25hm[0K[17G[?25l$ git commit -m a[0K[?25h[?25l$ git commit -m[0K[17G[?25h[?25l$ git commit -m "[0K[?25hs[0Ku[0Kp[0Kp[0Ko[0Kr[0Kt[0K[26G[?25l$ git commit -m "support m[0K[?25hu[0Kl[0Kt[0Ki[0Kp[0Kl[0Ke[0K[35G[?25l$ git commit -m "support multiple i[0K[?25hn[0Kp[0Ku[0Kt[0Ks[0K"[0K[?25l
-[0K[?25h[master 6e96c3f] support multiple inputs[0K[?25l
- 74 files changed, 28611 insertions(+), 3584 deletions(-)[0K
- create mode 100644 .Rproj.user/1C9E7A50/console06/4BB66F4C[0K
- delete mode 100644 .Rproj.user/1C9E7A50/console06/91694022[0K
- rewrite .Rproj.user/1C9E7A50/console06/INDEX001 (100%)[0K
- create mode 100644 .Rproj.user/1C9E7A50/sources/prop/36EBD7E0[0K
- create mode 100644 .Rproj.user/1C9E7A50/sources/prop/4FFF88A2[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/17979F02-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/1A05FD77-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/2760DC51-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/34838E08-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/39AD73B3-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/528CB922-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/6322D8B7-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/768F631C-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/78179048-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/7A0570D9-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/7BB995AC-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/7DBB2594-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/7FB3B34F-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/8F4642E3-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/99B16B74-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/99F3B19B-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/9DD8D9AC-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/A9BFD961-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/B0A8F748-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/BFCD67E5-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/C4FAA1FB-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/C726127A[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/C726127A-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/D2FF0F8F-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/DBF2EF14-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/DEACD96D-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/E2F447F6-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/E87ECE53-contents[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-535021DC/EA67EBB2-contents[0K
- rename .Rproj.user/1C9E7A50/sources/{s-535021DC/71264429-contents => s-F3B87EF7/309B2854-contents} (100%)[0K
- rename .Rproj.user/1C9E7A50/sources/{s-535021DC/C4FAA1FB => s-F3B87EF7/5E6304AD} (57%)[0K
- create mode 100644 .Rproj.user/1C9E7A50/sources/s-F3B87EF7/5E6304AD-contents[0K
- create mode 100644 .Rproj.user/1C9E7A50/sources/s-F3B87EF7/75B073B7-contents[0K
- create mode 100644 .Rproj.user/1C9E7A50/sources/s-F3B87EF7/7E3ED6A7-contents[0K
- create mode 100644 .Rproj.user/1C9E7A50/sources/s-F3B87EF7/BCC3045B-contents[0K
- rename .Rproj.user/1C9E7A50/sources/{s-535021DC => s-F3B87EF7}/F3C66F4D (74%)[0K
- rename .Rproj.user/1C9E7A50/sources/{s-535021DC => s-F3B87EF7}/F3C66F4D-contents (82%)[0K
- rename .Rproj.user/1C9E7A50/sources/{s-535021DC => s-F3B87EF7}/lock_file (100%)[0K
- create mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml28f82e5b63b3/index.html[0K
- create mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml28f82e5b63b3/lib/crosstalk-1.0.0/css/crosstalk.css[0K
- create mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml28f82e5b63b3/lib/crosstalk-1.0.0/js/crosstalk.js[0K
  create mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml28f82e5b63b3/lib/crosstalk-1.0.0/js/crosstalk.js.map[0K
  create mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml28f82e5b63b3/lib/crosstalk-1.0.0/js/crosstalk.min.js[0K
  create mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml28f82e5b63b3/lib/crosstalk-1.0.0/js/crosstalk.min.js.map[0K
@@ -1189,4 +922,84 @@ Changes not staged for commit:[0K
 no changes added to commit (use "git add" and/or "git commit -a")[0K
 [0K[?25h[?25l
 [0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K[85G[?25h[?25l
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add -[0K[?25h-[0Ka[0Kl[0Kl[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add -[0K[?25h-[0Ka[0Kl[0Kl[0K[?25l
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/files-pane.pper.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/workbench-pane.pper.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/32A76CE0.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-F409293E/5E6304AD.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25h[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[14G[?25l$ git commit -[0K[?25hm[0K[17G[?25l$ git commit -m "[0K[?25hd[0Ke[0Kp[0Kl[0Ko[0Ky[0K[25G[?25l$ git commit -m "deploy a[0K[?25hp[0Kp[0K"[0K[?25l
+[0K[?25h[master 06036a2] deploy app[0K[?25l
+ 7 files changed, 104 insertions(+), 10 deletions(-)[0K
+[0K[?25h[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25hu[0Ks[0Kh[0K[?25l
+[0K[?25hCounting objects: 20, done.[0K[?25l
+[0K[?25hDelta compression using up to 4 threads.[0K[?25l
+Compressing objects: 100% (18/18), done.[0K
+Writing objects: 100% (20/20), 2.26 KiB | 177.00 KiB/s, done.[0K
+Total 20 (delta 10), reused 0 (delta 0)[0K
+[0K[?25h[?25lremote: Resolving deltas:  50% (5/10)[0K[1G[?25hremote: Resolving deltas: 100% (10/10), completed with 10 local objects.[0K[?25l
+[0K[?25hTo https://github.com/cchtEE/TAC-seq-gene-expression.git[0K[?25l
+   7ab3f03..06036a2  master -> master[0K
+[0K[?25h[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+$[0K[3G[?25h[0m[0K     15 [main] cut (14848) C:\cygwin64\bin\cut.exe: *** fatal error - cygheap base mismatch detected - 0[0Kx[?25l
+180301410/0x18031B410.[0K
+This problem is probably due to using incompatible versions of the cygwin DLL.[0K
+Search for cygwin1.dll using the Windows Start->Find/Search facility[0K
+and delete all but the most recent version.  The most recent version *should*[0K
+reside in x:\cygwin\bin, where 'x' is the drive on which you have[0K
+installed the cygwin distribution.  Rebooting is also suggested if you[0K
+are unable to find another cygwin DLL.[0K
+[0K[?25h]0;:/c/Users/hindr/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git s[0K[?25ht[0Ka[0Kt[0Ku[0Ks[0K[?25l
+[0K[?25hOn branch master[0K[?25l
+Your branch is up to date with 'origin/master'.[0K
+[0K
+Changes not staged for commit:[0K
+  (use "git add/rm <file>..." to update what will be committed)[0K
+  (use "git checkout -- <file>..." to discard changes in working directory)[0K
+[0K
+        [0;31mmodified:   .Rproj.user/1C9E7A50/console06/4BB66F4C[0m[0K
+        [0;31mmodified:   .Rproj.user/1C9E7A50/console06/INDEX001[0m[0K
+        [0;31mmodified:   .Rproj.user/1C9E7A50/pcs/files-pane.pper[0m[0K
+        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-F409293E/373B80FF-contents[0m[0K
+        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-F409293E/4676D4D1-contents[0m[0K
+        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-F409293E/5E6304AD[0m[0K
+        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-F409293E/5E6304AD-contents[0m[0K
+        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-F409293E/7E609099-contents[0m[0K
+        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-F409293E/F3C66F4D[0m[0K
+        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-F409293E/F3C66F4D-contents[0m[0K
+        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-F409293E/lock_file[0m[0K
+[0K
+Untracked files:[0K
+  (use "git add <file>..." to include in what will be committed)[0K
+[0K
+        [0;31m.Rproj.user/1C9E7A50/sources/s-3525B9A6/[0m[0K
+[0K
+no changes added to commit (use "git add" and/or "git commit -a")[0K
+[0K[?25h[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hu[0K[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25h[?25lu[0K[8G[?25h[9G[?25l$ git pul[0K[?25hl[0K[?25l
+[0K[?25hAlready up to date.[0K[?25l
+[0K[?25h[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+$[0K[3G[?25h[0m[0K     19 [main] cut (9744) C:\cygwin64\bin\cut.exe: *** fatal error - cygheap base mismatch detected - 0x[0K1[?25l
+80301410/0x18031B410.[0K
+This problem is probably due to using incompatible versions of the cygwin DLL.[0K
+Search for cygwin1.dll using the Windows Start->Find/Search facility[0K
+and delete all but the most recent version.  The most recent version *should*[0K
+reside in x:\cygwin\bin, where 'x' is the drive on which you have[0K
+installed the cygwin distribution.  Rebooting is also suggested if you[0K
+are unable to find another cygwin DLL.[0K
+[0K[?25h]0;:/c/Users/hindr/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25h[?25ld[0K[8G[?25h[9G[?25l$ git add[0K[?25h[11G[?25l$ git add -[0K[?25h-[0Ka[0Kl[0Kl[0K[?25l
+[0K[?25h
