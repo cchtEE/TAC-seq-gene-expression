@@ -8,10 +8,11 @@ library(pheatmap)
 targets <- read_tsv("TAC-seq-gene-expression/data/targets/READY_targets.tsv")
 controls <- read_tsv("TAC-seq-gene-expression/data/controls/READY_controls.tsv")
 
-df <- list.files("TAC-seq-gene-expression/data/counts/", full.names = T) %>%
+df <- list.files("TAC-seq-gene-expression/data/counts/", pattern = "TAC-seq_counts.tsv", full.names = T) %>%
 # df <- list.files("../../../Desktop/", "READY", full.names = T) %>%
   set_names(nm = basename(.)) %>%
   map_dfr(read_tsv, .id = "file") %>%
+
   filter(
     !str_detect(sample, "Undetermined"),  # remove undetermined samples
     locus != "unmatched"  # remove unmatched loci
