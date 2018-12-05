@@ -1,117 +1,0 @@
-[0m[0K      5 [main] cut (13264) C:\cygwin64\bin\cut.exe: *** fatal error - cygheap b[0Ka[?25l
-se mismatch detected - 0x180301410/0x18031B410.[0K
-This problem is probably due to using incompatible versions of the cygwin DLL.[0K
-Search for cygwin1.dll using the Windows Start->Find/Search facility[0K
-and delete all but the most recent version.  The most recent version *should*[0K
-reside in x:\cygwin\bin, where 'x' is the drive on which you have[0K
-installed the cygwin distribution.  Rebooting is also suggested if you[0K
-are unable to find another cygwin DLL.[0K
-[0K[?25h[?25l[8A      5 [main] cut (13264) C:\cygwin64\bin\cut.exe: *** fatal error - cygheap base mismatch detected - 0[0Kx
-180301410/0x18031B410.[0K
-This problem is probably due to using incompatible versions of the cygwin DLL.[0K
-Search for cygwin1.dll using the Windows Start->Find/Search facility[0K
-and delete all but the most recent version.  The most recent version *should*[0K
-reside in x:\cygwin\bin, where 'x' is the drive on which you have[0K
-installed the cygwin distribution.  Rebooting is also suggested if you[0K
-are unable to find another cygwin DLL.[0K
-[0K[?25h]0;:/c/Users/hindr/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git s[0K[?25hh[0Ko[0Kw[0K[?25l
-[0K[?25h[0;33mcommit b9a9e3d7c3f18806d9d5ab8be0b471d361aef86f ([0;36;96mHEAD -> [0;32;92mmaster[0;33m, [0;31;91morigin/master[0;33m, [0;31;91morigin/HEAD[0;33m)[0m[0K[?25l
-Author: Hindrek Teder <hindrek.teder@gmail.com>[0K
-Date:   Thu Nov 22 16:24:31 2018 +0200[0K
-[0K
-    add heatmap[0K
-[0K
-[0;1mdiff --git a/.Rproj.user/1C9E7A50/console06/4BB66F4C b/.Rproj.user/1C9E7A50/console06/4BB66F4C[0m[0K
-[0;1mindex 657a46b..90ea309 100644[0m[0K
-[0;1m--- a/.Rproj.user/1C9E7A50/console06/4BB66F4C[0m[0K
-[0;1m+++ b/.Rproj.user/1C9E7A50/console06/4BB66F4C[0m[0K
-[0;36m@@ -1,271 +1,4 @@[0m[0K
-[0K
-[0;31m-and delete all but the most recent version.  The most recent version *should*[0m[0K
-[0;31m-reside in x:\cygwin\bin, where 'x' is the drive on which you have[0m[0K
-[0;31m-installed the cygwin distribution.  Rebooting is also suggested if you[0m[0K
-[0;31m-are unable to find another cygwin DLL.[0m[0K
-[0;31m-0;:/c/Users/hindr/OneDrive - Tartu [0;30;41m<C3><9C>[0;31mlikool/TerviseTAK/TAC-seq-gene-expression[0;30;41m^G[0m[0K
-:[0K[?25h[?25l[0K[?25h[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ q[0K[?25h[?25l$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git s[0K[?25ht[0Ka[0Kt[0Ku[0Ks[0K[?25l
-[0K[?25hOn branch master[0K[?25l
-Your branch is up to date with 'origin/master'.[0K
-[0K
-Changes not staged for commit:[0K
-  (use "git add/rm <file>..." to update what will be committed)[0K
-  (use "git checkout -- <file>..." to discard changes in working directory)[0K
-[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/console06/4BB66F4C[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/console06/INDEX001[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/pcs/files-pane.pper[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/pcs/workbench-pane.pper[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/sources/prop/1829B12C[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/sources/prop/32A76CE0[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/sources/prop/BCF51075[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-63550DF8/5E6304AD[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-63550DF8/5E6304AD-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-63550DF8/F3C66F4D[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-63550DF8/F3C66F4D-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-63550DF8/lock_file[0m[0K
-        [0;31mmodified:   TAC-seq-gene-expression.R[0m[0K
-        [0;31mmodified:   TAC-seq-gene-expression/data/controls/READY_controls.tsv[0m[0K
-[0K
-Untracked files:[0K
-  (use "git add <file>..." to include in what will be committed)[0K
-[0K
-        [0;31m.Rproj.user/1C9E7A50/console06/E587FF8A[0m[0K
-        [0;31m.Rproj.user/1C9E7A50/sources/s-ECC25CDB/[0m[0K
-        [0;31mREADY.pdf[0m[0K
-[0K
-no changes added to commit (use "git add" and/or "git commit -a")[0K
-[0K[?25h[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[0m[0K      7 [main] cut (16760) C:\cygwin64\bin\cut.exe: *** fatal error - cygheap base mismatch detected - 0[0Kx[?25l
-180301410/0x18031B410.[0K
-This problem is probably due to using incompatible versions of the cygwin DLL.[0K
-Search for cygwin1.dll using the Windows Start->Find/Search facility[0K
-and delete all but the most recent version.  The most recent version *should*[0K
-reside in x:\cygwin\bin, where 'x' is the drive on which you have[0K
-installed the cygwin distribution.  Rebooting is also suggested if you[0K
-are unable to find another cygwin DLL.[0K
-]0;:/c/Users/hindr/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git s[0K[?25ht[0Ka[0Kt[0Ku[0Ks[0K[?25l
-[0K[?25hOn branch master[0K[?25l
-Your branch is up to date with 'origin/master'.[0K
-[0K
-Changes not staged for commit:[0K
-  (use "git add/rm <file>..." to update what will be committed)[0K
-  (use "git checkout -- <file>..." to discard changes in working directory)[0K
-[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/console06/4BB66F4C[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/console06/INDEX001[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/pcs/files-pane.pper[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/pcs/source-pane.pper[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/pcs/workbench-pane.pper[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/sources/prop/1829B12C[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/sources/prop/32A76CE0[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/sources/prop/BCF51075[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-63550DF8/5E6304AD[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-63550DF8/5E6304AD-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-63550DF8/F3C66F4D[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-63550DF8/F3C66F4D-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-63550DF8/lock_file[0m[0K
-        [0;31mmodified:   TAC-seq-gene-expression.R[0m[0K
-        [0;31mmodified:   TAC-seq-gene-expression/data/controls/READY_controls.tsv[0m[0K
-[0K
-Untracked files:[0K
-  (use "git add <file>..." to include in what will be committed)[0K
-[0K
-        [0;31m.Rproj.user/1C9E7A50/console06/E587FF8A[0m[0K
-        [0;31m.Rproj.user/1C9E7A50/sources/s-65885C0A/[0m[0K
-        [0;31mREADY.pdf[0m[0K
-[0K
-no changes added to commit (use "git add" and/or "git commit -a")[0K
-[0K[?25h[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add -[0K[?25h-[0Ka[0Kl[0Kl[0K[?25l
-[0K[?25h

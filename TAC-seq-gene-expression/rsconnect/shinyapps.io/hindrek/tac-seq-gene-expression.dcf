@@ -5,6 +5,6 @@ account: hindrek
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 528792
-bundleId: 1715046
+bundleId: 1728791
 url: https://hindrek.shinyapps.io/tac-seq-gene-expression/
-when: 1542896021.92343
+when: 1543500660.4595
