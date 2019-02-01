@@ -1,156 +1,0 @@
-[0m[0K      7 [main] cut (15632) C:\cygwin64\bin\cut.exe: *** fatal error - cygheap b[0Ka[?25l
-se mismatch detected - 0x180301410/0x18031B410.[0K
-This problem is probably due to using incompatible versions of the cygwin DLL.[0K
-Search for cygwin1.dll using the Windows Start->Find/Search facility[0K
-and delete all but the most recent version.  The most recent version *should*[0K
-reside in x:\cygwin\bin, where 'x' is the drive on which you have[0K
-installed the cygwin distribution.  Rebooting is also suggested if you[0K
-are unable to find another cygwin DLL.[0K
-[0K[?25h[?25l[8A      7 [main] cut (15632) C:\cygwin64\bin\cut.exe: *** fatal error - cygheap base mismatch detected - 0[0Kx
-180301410/0x18031B410.[0K
-This problem is probably due to using incompatible versions of the cygwin DLL.[0K
-Search for cygwin1.dll using the Windows Start->Find/Search facility[0K
-and delete all but the most recent version.  The most recent version *should*[0K
-reside in x:\cygwin\bin, where 'x' is the drive on which you have[0K
-installed the cygwin distribution.  Rebooting is also suggested if you[0K
-are unable to find another cygwin DLL.[0K
-[0K[?25h]0;:/c/Users/hindr/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-      5 [main] cut (15988) C:\cygwin64\bin\cut.exe: *** fatal error - cygheap base mismatch detected - 0[0Kx[?25l
-180301410/0x18031B410.[0K
-This problem is probably due to using incompatible versions of the cygwin DLL.[0K
-Search for cygwin1.dll using the Windows Start->Find/Search facility[0K
-and delete all but the most recent version.  The most recent version *should*[0K
-reside in x:\cygwin\bin, where 'x' is the drive on which you have[0K
-installed the cygwin distribution.  Rebooting is also suggested if you[0K
-are unable to find another cygwin DLL.[0K
-[0K[?25h]0;:/c/Users/hindr/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git s[0K[?25ht[0Ka[0Kt[0Ku[0Ks[0K[?25l
-[0K[?25hOn branch master[0K[?25l
-Your branch is up to date with 'origin/master'.[0K
-[0K
-Changes not staged for commit:[0K
-  (use "git add/rm <file>..." to update what will be committed)[0K
-  (use "git checkout -- <file>..." to discard changes in working directory)[0K
-[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/console06/E587FF8A[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/console06/INDEX001[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/pcs/files-pane.pper[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/pcs/source-pane.pper[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/persistent-state[0m[0K
-        [0;31mmodified:   .Rproj.user/1C9E7A50/sources/prop/1829B12C[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-65885C0A/3EF7FDFC[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-65885C0A/3EF7FDFC-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-65885C0A/5E6304AD[0m[0K[9G[?25h[?25l
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-65885C0A/5E6304AD-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-65885C0A/F3C66F4D[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-65885C0A/F3C66F4D-contents[0m[0K
-        [0;31mdeleted:    .Rproj.user/1C9E7A50/sources/s-65885C0A/lock_file[0m[0K
-        [0;31mmodified:   TAC-seq-gene-expression/data/controls/READY_controls.tsv[0m[0K
-        [0;31mmodified:   TAC-seq-gene-expression/rsconnect/shinyapps.io/hindrek/tac-seq-gene-expression.dcf[0m[0K
-[0K
-Untracked files:[0K
-  (use "git add <file>..." to include in what will be committed)[0K
-[0K
-        [0;31m.Rproj.user/1C9E7A50/console06/1C20621E[0m[0K
-        [0;31m.Rproj.user/1C9E7A50/sources/s-7C6F9FF6/[0m[0K
-[0K
-no changes added to commit (use "git add" and/or "git commit -a")[0K
-[0K[?25h[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git s[0K[?25hh[0Ko[0Kw[0K[?25l
-[0K[?25h[0;33mcommit 25b0f2e2a0466c0d8cfb1a5f87adf4b933436ca1 ([0;36;96mHEAD -> [0;32;92mmaster[0;33m, [0;31;91morigin/master[0;33m, [0;31;91morigin/HEAD[0;33m)[0m[0K[?25l
-Author: Hindrek Teder <hindrek.teder@gmail.com>[0K
-Date:   Thu Nov 29 16:08:24 2018 +0200[0K
-[0K
-    new control set[0K
-[0K
-[0;1mdiff --git a/.Rproj.user/1C9E7A50/console06/4BB66F4C b/.Rproj.user/1C9E7A50/console06/4BB66F4C[0m[0K
-[0;1mdeleted file mode 100644[0m[0K
-[0;1mindex 90ea309..0000000[0m[0K
-[0;1m--- a/.Rproj.user/1C9E7A50/console06/4BB66F4C[0m[0K
-[0;1m+++ /dev/null[0m[0K
-[0;36m@@ -1,1005 +0,0 @@[0m[0K[?25h[?25l
-[0;31m-[0m[0K
-[0;31m- create mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml28f82e5b63b3/lib/crosstalk-1.0.0/js/cro[0Ks
-stalk.js.map[0m[0K
-[0;31m- create mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml28f82e5b63b3/lib/crosstalk-1.0.0/js/cro[0Ks
-stalk.min.js[0m[0K
-:[0K[?25h[?25l[0K[?25h[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$ q[0K
-[0K[?25hbash: q: command not found[0K[?25l
-[0K[?25h[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add -[0K[?25h-[0Ka[0Kl[0Kl[0K[?25l
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/files-pane.pper.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/source-pane.pper.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/persistent-state.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/1829B12C.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-7C6F9FF6/3EF7FDFC-contents.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-7C6F9FF6/5E6304AD.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-7C6F9FF6/5E6304AD-contents.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-7C6F9FF6/F3C66F4D.[0K
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-7C6F9FF6/F3C66F4D-contents.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25h[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[14G[?25l$ git commit -[0K[?25hm[0K[17G[?25l$ git commit -m "[0K[?25hn[0Ke[0Kw[0K[22G[?25l$ git commit -m "new c[0K[?25ho[0Kn[0Kt[0Kr[0Ko[0Kl[0K[30G[?25l$ git commit -m "new control s[0K[?25he[0Kt[0K"[0K[?25l
-[0K[?25h[master 89d286d] new control set[0K[?25l
- 17 files changed, 219 insertions(+), 259 deletions(-)[0K
- create mode 100644 .Rproj.user/1C9E7A50/console06/1C20621E[0K
- delete mode 100644 .Rproj.user/1C9E7A50/console06/E587FF8A[0K
- rewrite .Rproj.user/1C9E7A50/console06/INDEX001 (100%)[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-65885C0A/3EF7FDFC[0K
- delete mode 100644 .Rproj.user/1C9E7A50/sources/s-65885C0A/3EF7FDFC-contents[0K
- create mode 100644 .Rproj.user/1C9E7A50/sources/s-7C6F9FF6/3EF7FDFC-contents[0K
- rename .Rproj.user/1C9E7A50/sources/{s-65885C0A => s-7C6F9FF6}/5E6304AD (100%)[0K
- rename .Rproj.user/1C9E7A50/sources/{s-65885C0A => s-7C6F9FF6}/5E6304AD-contents (100%)[0K
- rename .Rproj.user/1C9E7A50/sources/{s-65885C0A => s-7C6F9FF6}/F3C66F4D (100%)[0K
- rename .Rproj.user/1C9E7A50/sources/{s-65885C0A => s-7C6F9FF6}/F3C66F4D-contents (100%)[0K
- rename .Rproj.user/1C9E7A50/sources/{s-65885C0A => s-7C6F9FF6}/lock_file (100%)[0K
- rewrite TAC-seq-gene-expression/data/controls/READY_controls.tsv (98%)[0K
-[0K[?25h[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25hu[0Ks[0Kh[0K[?25l
-[0K[?25hCounting objects: 23, done.[0K[?25l
-[0K[?25hDelta compression using up to 4 threads.[0K[?25l
-Compressing objects:  35% (7/20)[0K[1G[?25hCompressing objects: 100% (20/20), done.[0K[?25l
-Writing objects:  73% (17/23)[0K[1G[?25hWriting objects: 100% (23/23), 34.86 KiB | 1.34 MiB/s, done.[0K[?25l
-Total 23 (delta 7), reused 0 (delta 0)[0K
-[0K[?25h[?25lremote: Resolving deltas:  42% (3/7)[0K[1G[?25hremote: Resolving deltas: 100% (7/7), completed with 7 local objects.[0K[?25l
-[0K[?25hTo https://github.com/cchtEE/TAC-seq-gene-expression.git[0K[?25l
-   25b0f2e..89d286d  master -> master[0K
-[0K[?25h[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ l[0K[?25hi[0Kb[0Kr[0Ka[0Kr[0Ky[0K([0Kr[0Ks[0K[?25l$ library(r[0K[?25h[?25l$ library([0K[?25h[?25l$ library[0K[?25h[?25l$ librar[0K[?25h[?25l$ libra[0K[?25h[?25l$ libr[0K[?25h[?25l$ lib[0K[?25h[?25l$ li[0K[?25h[?25l$ l[0K[?25h[?25l$[0K[3G[?25h[0m[0K      5 [main] cut (11968) C:\cygwin64\bin\cut.exe: *** fatal error - cygheap base mismatch detected - 0[0Kx[?25l
-180301410/0x18031B410.[0K
-This problem is probably due to using incompatible versions of the cygwin DLL.[0K
-Search for cygwin1.dll using the Windows Start->Find/Search facility[0K
-and delete all but the most recent version.  The most recent version *should*[0K
-reside in x:\cygwin\bin, where 'x' is the drive on which you have[0K
-installed the cygwin distribution.  Rebooting is also suggested if you[0K
-are unable to find another cygwin DLL.[0K
-[0K[?25h]0;:/c/Users/hindr/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-[0m[0K     33 [main] cut (14332) C:\cygwin64\bin\cut.exe: *** fatal error - cygheap base mismatch detected - 0[0Kx[?25l
-180301410/0x18031B410.[0K
-This problem is probably due to using incompatible versions of the cygwin DLL.[0K
-Search for cygwin1.dll using the Windows Start->Find/Search facility[0K
-and delete all but the most recent version.  The most recent version *should*[0K
-reside in x:\cygwin\bin, where 'x' is the drive on which you have[0K
-installed the cygwin distribution.  Rebooting is also suggested if you[0K
-are unable to find another cygwin DLL.[0K
-[0K[?25h]0;:/c/Users/hindr/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[?25l
-[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
-[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add -[0K[?25h-[0Ka[0Kl[0Kl[0K[?25l
-[0K[?25h

@@ -1,0 +1,65 @@
+[0m[0K      6 [main] cut (4712) C:\cygwin64\bin\cut.exe: *** fatal error - cygheap ba[0Ks[?25l
+e mismatch detected - 0x180301410/0x18031B410.[0K
+This problem is probably due to using incompatible versions of the cygwin DLL.[0K
+Search for cygwin1.dll using the Windows Start->Find/Search facility[0K
+and delete all but the most recent version.  The most recent version *should*[0K
+reside in x:\cygwin\bin, where 'x' is the drive on which you have[0K
+installed the cygwin distribution.  Rebooting is also suggested if you[0K
+are unable to find another cygwin DLL.[0K
+[0K[?25h[?25l[8A      6 [main] cut (4712) C:\cygwin64\bin\cut.exe: *** fatal error - cygheap base mismatch detected - 0x[0K1
+80301410/0x18031B410.[0K
+This problem is probably due to using incompatible versions of the cygwin DLL.[0K
+Search for cygwin1.dll using the Windows Start->Find/Search facility[0K
+and delete all but the most recent version.  The most recent version *should*[0K
+reside in x:\cygwin\bin, where 'x' is the drive on which you have[0K
+installed the cygwin distribution.  Rebooting is also suggested if you[0K
+are unable to find another cygwin DLL.[0K
+[0K[?25h]0;:/c/Users/hindr/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25hu[0Kl[0K[?25ll[0K[10G[?25h[11G[?25l
+[0K[?25hremote: Enumerating objects: 3, done.[0K[?25l
+remote: Counting objects: 100% (3/3), done.[0K
+remote: Compressing objects: 100% (3/3), done.[0K
+[0K[?25hremote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0[0K[?25l
+[0K[?25h[?25lUnpacking objects:  33% (1/3)[0K[1G[?25hUnpacking objects: 100% (3/3), done.[0K[?25l
+[0K[?25hFrom https://github.com/cchtEE/TAC-seq-gene-expression[0K[?25l
+   9c6bd01..bb7d32f  master     -> origin/master[0K
+[0K[?25hUpdating 9c6bd01..bb7d32f[0K[?25l
+Fast-forward[0K
+[0K[?25h README.md | 3 [0;32m++[0;31m-[0m[0K[?25l
+ 1 file changed, 2 insertions(+), 1 deletion(-)[0K
+[0K[?25h[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[?25l
+[0K[?25hNothing specified, nothing added.[0K[?25l
+Maybe you wanted to say 'git add .'?[0K
+[0K[?25h[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ git add[0K[?25h[11G[?25l$ git add -[0K[?25hh[0K[?25l
+[0K[?25husage: git add [<options>] [--] <pathspec>...[0K[?25l
+[0K
+    -n, --dry-run         dry run[0K
+    -v, --verbose         be verbose[0K
+[0K
+    -i, --interactive     interactive picking[0K
+    -p, --patch           select hunks interactively[0K
+    -e, --edit            edit current diff and apply[0K
+    -f, --force           allow adding otherwise ignored files[0K
+    -u, --update          update tracked files[0K
+    --renormalize         renormalize EOL of tracked files (implies -u)[0K
+    -N, --intent-to-add   record only the fact that the path will be added later[0K
+    -A, --all             add changes from all tracked and untracked files[0K
+    --ignore-removal      ignore paths removed in the working tree (same as --no-all)[0K
+    --refresh             don't add, only refresh the index[0K
+    --ignore-errors       just skip files which cannot be added because of errors[0K
+    --ignore-missing      check if - even missing - files are ignored in dry run[0K
+    --chmod <(+/-)x>      override the executable bit of the listed files[0K
+[0K
+[0K[?25h[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K[23G[?25h[?25l
+$[0K[3G[?25h[?25l$ git add -h[0K[?25h[?25l$ git add -[0K[?25ha[0Kl[0K[?25ll[0K[14G[?25h[15G[?25l
+[0K[?25herror: did you mean `--all` (with two dashes ?)[0K[?25l
+[0K[?25h[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ git add -all[0K[?25h[14G[13G[12G[?25l$ git add --all[0K[13G[?25h[?25l
+[0K[?25h

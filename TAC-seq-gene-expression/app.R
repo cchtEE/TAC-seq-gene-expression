@@ -35,12 +35,13 @@ ui <- dashboardPage(
         fileInput("counts", label = "Choose count file(s):", accept = "text", multiple = T),
         selectInput("target_list", label = "Choose target list or file:", choices = list(
           "Choose one" = "",
-          "READY targets" = "data/targets/READY_targets.tsv"
+          "READY 65 targets" = "data/targets/READY_65targets.tsv",
+          "READY 76 targets" = "data/targets/READY_76targets.tsv"
         )),
         fileInput("target_file", label = "", accept = "text"),
         selectInput("control_list", label = "Choose control list or file (optional):", choices = list(
           "Choose one" = "",
-          "READY controls" = "data/controls/READY_controls.tsv"
+          "READY controls (65 targets)" = "data/controls/READY_controls_65targets.tsv"
         )),
         fileInput("control_file", label = "", accept = "text"),
         plotOutput("biomarkers"),
@@ -86,15 +87,16 @@ server <- function(input, output) {
 
   counts <- reactive({
     req(input$counts)
-    validate(need(try(
-      counts <- input$counts$datapath %>%
-        set_names(nm = input$counts$name) %>%
-        map_dfr(read_tsv, .id = "file") %>%
-        select(file, sample, locus, molecule_count) %>%
-        filter(
-          !str_detect(sample, "Undetermined"),  # remove undetermined samples
-          locus != "unmatched"  # remove unmatched loci
-        )
+    validate(need(
+      try(
+        counts <- input$counts$datapath %>%
+          set_names(nm = input$counts$name) %>%
+          map_dfr(read_tsv, .id = "file") %>%
+          select(file, sample, locus, molecule_count) %>%
+          filter(
+            !str_detect(sample, "Undetermined"),  # remove undetermined samples
+            locus != "unmatched"  # remove unmatched loci
+          )
       ),
       "Incorrect count file(s). Please choose correct TAC-seq count file(s) with columns \"sample\", \"locus\" and \"molecule_count\"."
     ))
@@ -115,13 +117,13 @@ server <- function(input, output) {
         ),
         "Incorrect target file. Please choose correct target file with columns \"target\" and \"type\"."
       ))
-      targets
     } else if (isTruthy(input$target_list)) {
-      input$target_list %>%
+      targets <- input$target_list %>%
         read_tsv()
     } else {
       req(FALSE)
     }
+    targets
   })
 
   output$targets <- renderTable(
@@ -145,14 +147,19 @@ server <- function(input, output) {
         ),
         "Incorrect control file. Please choose correct control file with columns \"sample\", \"label\" and column for each \"target\"."
       ))
-      controls
     } else if (isTruthy(input$control_list)) {
-      input$control_list %>%
-        read_tsv() %>%
-        select(sample, label, !!bm)
+      validate(need(
+        try(
+          controls <- input$control_list %>%
+            read_tsv() %>%
+            select(sample, label, !!bm)
+        ),
+        "Missing target(s) in controls. Please choose correct targets or controls."
+      ))
     } else {
       return(NULL)
     }
+    controls
   })
 
   output$controls <- renderDataTable(controls())

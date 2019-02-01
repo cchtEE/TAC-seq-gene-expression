@@ -1,0 +1,10 @@
+{
+    "dialog-state" : {
+        "caseSensitive" : false,
+        "filePatterns" : [
+        ],
+        "path" : "C:/Users/hindr/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression",
+        "query" : "READY_targets.tsv",
+        "regex" : false
+    }
+}
