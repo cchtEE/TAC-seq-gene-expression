@@ -14,8 +14,9 @@ This repository contains TAC-seq gene expression data analysis software.
 * Control file with:
   * column `sample` - sample ID
   * column `label` - class label
+  * column for each `biomarker`
 
 ## Output
 Normalized count table with:
 * column `sample` - sample ID
-* column for each `target`
+* column for each `biomarker`
