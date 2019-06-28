@@ -35,13 +35,14 @@ ui <- dashboardPage(
         fileInput("counts", label = "Choose count file(s):", accept = "text", multiple = T),
         selectInput("target_list", label = "Choose target list or file:", choices = list(
           "Choose one" = "",
-          "READY 65 targets" = "data/targets/READY_65targets.tsv",
-          "READY 76 targets" = "data/targets/READY_76targets.tsv"
+          "READY65 target set" = "data/targets/READY65_target_set.tsv",
+          "READY76 target set" = "data/targets/READY76_target_set.tsv"
         )),
         fileInput("target_file", label = "", accept = "text"),
         selectInput("control_list", label = "Choose control list or file (optional):", choices = list(
           "Choose one" = "",
-          "READY controls (65 targets)" = "data/controls/READY_controls_65targets.tsv"
+          "READY65 control set" = "data/controls/READY65_control_set.tsv",
+          "READY65 small control set" = "data/controls/READY65_small_control_set.tsv"
         )),
         fileInput("control_file", label = "", accept = "text"),
         plotOutput("biomarkers"),

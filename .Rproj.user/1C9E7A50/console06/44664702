@@ -62,4 +62,103 @@ $[0K[3G[?25h[?25l$ git add -h[0K[?25h[?25l$ git add -[0K[?25ha[0Kl[
 [0K[?25h[?25l
 [0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
 $[0K[3G[?25h[?25l$ git add -all[0K[?25h[14G[13G[12G[?25l$ git add --all[0K[13G[?25h[?25l
-[0K[?25h
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/files-pane.pper.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/source-pane.pper.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/source-window.pper.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/windowlayoutstate.pper.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/32A76CE0.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/BCF51075.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/INDEX.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/shared/notebooks/paths.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/pcs/find-in-files.pper.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/78BA8ED2.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/A16599D.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/prop/A8F2B717.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-2DA9DFEC/509E0B2D.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/1C9E7A50/sources/s-2DA9DFEC/509E0B2D-contents.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25h[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K[1G[?25h[?25l
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[14G[?25l$ git commit -[0K[?25hm[0K[17G[?25l$ git commit -m "[0K[?25ha[0Kd[0Kd[0K[22G[?25l$ git commit -m "add R[0K[?25hE[0KA[0KD[0KY[0K[28G[?25l$ git commit -m "add READY 7[0K[?25h6[0K[31G[?25l$ git commit -m "add READY 76 t[0K[?25ha[0Kr[0Kg[0Ke[0Kt[0Ks[0K"[0K[?25l
+[0K[?25h[master e66a345] add READY 76 targets[0K[?25l
+ 48 files changed, 258 insertions(+), 17782 deletions(-)[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/console06/1C20621E[0K
+ create mode 100644 .Rproj.user/1C9E7A50/console06/44664702[0K
+ rewrite .Rproj.user/1C9E7A50/console06/INDEX001 (100%)[0K
+ create mode 100644 .Rproj.user/1C9E7A50/pcs/find-in-files.pper[0K
+ create mode 100644 .Rproj.user/1C9E7A50/sources/prop/78BA8ED2[0K
+ create mode 100644 .Rproj.user/1C9E7A50/sources/prop/A16599D[0K
+ create mode 100644 .Rproj.user/1C9E7A50/sources/prop/A8F2B717[0K
+ create mode 100644 .Rproj.user/1C9E7A50/sources/s-2DA9DFEC/509E0B2D[0K
+ rename .Rproj.user/1C9E7A50/sources/{s-3660C2A8/5E6304AD-contents => s-2DA9DFEC/509E0B2D-contents} (90%[0K)
+[0K
+ rename .Rproj.user/1C9E7A50/sources/{s-3660C2A8 => s-2DA9DFEC}/lock_file (100%)[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/sources/s-3660C2A8/28A30FF0-contents[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/sources/s-3660C2A8/50D27AF8-contents[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/sources/s-3660C2A8/59B2FE7A-contents[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/sources/s-3660C2A8/9F2E16FB-contents[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/sources/s-3660C2A8/DA440B96-contents[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/sources/s-3660C2A8/E9AAFE39-contents[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/sources/s-3660C2A8/F3C66F4D-contents[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/current_index[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/history_entries[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml1f685c4a74ec/index.html[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml1f685c4a74ec/lib/crosstalk-1.0.0/css/cro[0Ks
+stalk.css[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml1f685c4a74ec/lib/crosstalk-1.0.0/js/cros[0Ks
+talk.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml1f685c4a74ec/lib/crosstalk-1.0.0/js/cros[0Ks
+talk.js.map[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml1f685c4a74ec/lib/crosstalk-1.0.0/js/cros[0Ks
+talk.min.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml1f685c4a74ec/lib/crosstalk-1.0.0/js/cros[0Ks
+talk.min.js.map[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml1f685c4a74ec/lib/htmlwidgets-1.3/htmlwid[0Kg
+ets.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml1f685c4a74ec/lib/jquery-1.11.3/jquery-AU[0KT
+HORS.txt[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml1f685c4a74ec/lib/jquery-1.11.3/jquery.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml1f685c4a74ec/lib/jquery-1.11.3/jquery.mi[0Kn
+.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml1f685c4a74ec/lib/jquery-1.11.3/jquery.mi[0Kn
+.map[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml1f685c4a74ec/lib/plotly-binding-4.8.0/pl[0Ko
+tly.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml1f685c4a74ec/lib/plotly-htmlwidgets-css-[0K1
+.39.2/plotly-htmlwidgets.css[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml1f685c4a74ec/lib/plotly-main-1.39.2/plot[0Kl
+y-latest.min.js[0K
+ delete mode 100644 .Rproj.user/1C9E7A50/viewer_history/viewhtml1f685c4a74ec/lib/typedarray-0.1/typedarr[0Ka
+y.min.js[0K
+ delete mode 100644 TAC-seq-gene-expression/data/controls/READY_controls.tsv[0K
+ rename .Rproj.user/1C9E7A50/sources/s-3660C2A8/2D44150E-contents => TAC-seq-gene-expression/data/contro[0Kl
+s/READY_controls_65targets.tsv (100%)[0K
+ rename TAC-seq-gene-expression/data/targets/{READY_targets.tsv => READY_65targets.tsv} (100%)[0K
+ create mode 100644 TAC-seq-gene-expression/data/targets/READY_76targets.tsv[0K
+[0K[?25h[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25hu[0Ks[0Kh[0K[?25l
+[0K[?25hCounting objects: 36, done.[0K[?25l
+[0K[?25hDelta compression using up to 4 threads.[0K[?25l
+Compressing objects:  84% (27/32)[0K[1G[?25hCompressing objects: 100% (32/32), done.[0K[?25l
+Writing objects: 100% (36/36), 7.67 KiB | 212.00 KiB/s, done.[0K[1G[?25h[?25l
+Total 36 (delta 8), reused 0 (delta 0)[0K
+[0K[?25h[?25lremote: Resolving deltas:  50% (4/8)[0K[1G[?25hremote: Resolving deltas: 100% (8/8), completed with 8 local objects.[0K[?25l
+[0K[?25hTo https://github.com/cchtEE/TAC-seq-gene-expression.git[0K[?25l
+   bb7d32f..e66a345  master -> master[0K
+[0K[?25h[?25l
+[0;32mhindr@DESKTOP-12GM5E4 [0;35m [0;33m~/OneDrive - Tartu Ülikool/TerviseTAK/TAC-seq-gene-expression[0;36m (master)[0m[0K
+$[0K[3G[?25h
