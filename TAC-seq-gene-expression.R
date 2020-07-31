@@ -7,13 +7,13 @@ library(pheatmap)
 
 # read data ---------------------------------------------------------------
 
-targets <- read_tsv("TAC-seq-gene-expression/data/targets/READY76_target_set.tsv")
+targets <- read_tsv("TAC-seq-gene-expression/data/targets/READY76_targets.tsv")
 
 controls <- "TAC-seq-gene-expression/data/controls/READY65_control_set.tsv" %>%
   set_names(nm = basename(.)) %>%
   map_dfr(read_tsv, .id = "file")
 
-patients <- list.files("TAC-seq-gene-expression/data/counts/",
+patients <- list.files("TAC-seq-gene-expression/data/patients/",
                        pattern = "TAC-seq_counts.tsv", full.names = TRUE) %>%
   set_names(nm = basename(.)) %>%
   map_dfr(read_tsv, .id = "file") %>%
