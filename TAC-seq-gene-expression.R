@@ -13,7 +13,8 @@ controls <- "TAC-seq-gene-expression/data/controls/READY65_control_set.tsv" %>%
   set_names(nm = basename(.)) %>%
   map_dfr(read_tsv, .id = "file")
 
-patients <- list.files("TAC-seq-gene-expression/data/counts/", pattern = "TAC-seq_counts.tsv", full.names = TRUE) %>%
+patients <- list.files("TAC-seq-gene-expression/data/counts/",
+                       pattern = "TAC-seq_counts.tsv", full.names = TRUE) %>%
   set_names(nm = basename(.)) %>%
   map_dfr(read_tsv, .id = "file") %>%
   filter(!str_detect(sample, "Undetermined"),  # remove undetermined samples
@@ -59,7 +60,8 @@ patients %>%
   filter(type == "housekeeper") %>%
   ggplot(aes(sample, molecule_count)) +
   geom_point(aes(color = locus)) +
-  stat_summary(aes(statistic = "geometric mean"), fun = geo_mean, geom = "crossbar") +
+  stat_summary(aes(statistic = "geometric mean"), fun = geo_mean,
+               geom = "crossbar") +
   facet_wrap(vars(file), scales = "free") +
   labs(title = "Housekeeping genes", x = NULL, y = "molecule count") +
   theme(axis.text.x = element_text(vjust = 0.5, angle = 90))
@@ -75,7 +77,8 @@ biomarkers <- patients %>%
   filter(type == "biomarker") %>%
   mutate(norm_molecule_count = molecule_count / norm_factor) %>%
   filter(is.finite(norm_molecule_count)) %>%
-  pivot_wider(id_cols = c(file, sample), names_from = locus, values_from = norm_molecule_count) %>%
+  pivot_wider(id_cols = c(file, sample), names_from = locus,
+              values_from = norm_molecule_count) %>%
   bind_rows(controls)
 
 
