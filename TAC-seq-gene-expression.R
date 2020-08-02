@@ -9,9 +9,7 @@ library(pheatmap)
 
 targets <- read_tsv("TAC-seq-gene-expression/data/targets/READY76_targets.tsv")
 
-controls <- "TAC-seq-gene-expression/data/controls/READY65_control_set.tsv" %>%
-  set_names(nm = basename(.)) %>%
-  map_dfr(read_tsv, .id = "file")
+controls <- read_tsv("TAC-seq-gene-expression/data/controls/READY65_control_set.tsv")
 
 patients <- list.files("TAC-seq-gene-expression/data/patients/",
                        pattern = "TAC-seq_counts.tsv", full.names = TRUE) %>%
@@ -90,7 +88,7 @@ controls %>%
   step_pca(all_numeric(), num_comp = 2) %>%
   prep(strings_as_factors = FALSE) %>%
   bake(new_data = biomarkers) %>%
-  ggplot(aes(PC1, PC2, color = label, sample = sample, file = file)) +
+  ggplot(aes(PC1, PC2, color = label, sample = sample)) +
   geom_point() +
   labs(title = "PCA of biomarkers", color = NULL)
 ggplotly()
@@ -106,7 +104,7 @@ controls %>%
   # step_umap(all_numeric(), outcome = vars(label), seed = c(1, 1)) %>%
   prep(strings_as_factors = FALSE) %>%
   bake(new_data = biomarkers) %>%
-  ggplot(aes(umap_1, umap_2, color = label, sample = sample, file = file)) +
+  ggplot(aes(umap_1, umap_2, color = label, sample = sample)) +
   geom_point() +
   labs(title = "UMAP of biomarkers", color = NULL)
 ggplotly()
