@@ -26,7 +26,7 @@ patients %>%
   filter(type == "biomarker") %>%
   ggplot(aes(sample, molecule_count)) +
   geom_boxplot() +
-  geom_point(aes(color = locus), show.legend = FALSE) +
+  geom_point(aes(color = locus)) +
   scale_y_log10() +
   facet_wrap(vars(file), scales = "free") +
   labs(title = "Biomarkers", x = NULL, y = "molecule count") +
