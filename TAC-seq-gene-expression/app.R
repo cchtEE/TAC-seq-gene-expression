@@ -58,10 +58,10 @@ ui <- dashboardPage(
         ),
         fileInput("control_file", label = "", accept = "text"),
         plotOutput("biomarkers"),
+        h2("Counts"),
+        dataTableOutput("counts"),
         h2("Targets"),
         tableOutput("targets"),
-        h2("Raw counts"),
-        dataTableOutput("raw_counts"),
         h2("Controls"),
         dataTableOutput("controls")
       ),
@@ -119,16 +119,22 @@ server <- function(input, output) {
             )
         ),
         "Incorrect input file(s). Please choose correct TAC-seq count file(s) with columns 'sample', 'locus', and 'molecule_count'."
-      ),
+      )
+    )
+
+    validate(
       need(
         counts %>%
           count(sample, locus) %>%
           pull(n) == 1,
-        str_c("Remove duplicated sample: ", counts %>%
-          count(sample, locus) %>%
-          filter(n > 1) %>%
-          pull(sample) %>%
-          unique())
+        str_c(
+          "Remove duplicated sample: ",
+          counts %>%
+            count(sample, locus) %>%
+            filter(n > 1) %>%
+            pull(sample) %>%
+            unique()
+        )
       )
     )
 
@@ -290,15 +296,21 @@ server <- function(input, output) {
   )
 
 
+# train and test data -----------------------------------------------------
+
+  train_data <- reactive(req(controls()))
+  test_data <- reactive(req(bind_rows(controls(), norm_counts())))
+
+
 # PCA ---------------------------------------------------------------------
 
   output$pca <- renderPlotly({
-    controls() %>%
+    train_data() %>%
       recipe() %>%
       step_normalize(all_numeric()) %>%
       step_pca(all_numeric(), num_comp = 2) %>%
       prep(strings_as_factors = FALSE) %>%
-      bake(new_data = bind_rows(controls(), norm_counts())) %>%
+      bake(new_data = test_data()) %>%
       ggplot(aes(PC1, PC2, color = label, sample = sample)) +
       geom_point() +
       labs(title = "PCA of biomarkers", color = NULL) +
@@ -310,14 +322,14 @@ server <- function(input, output) {
 # UMAP --------------------------------------------------------------------
 
   output$umap <- renderPlotly({
-    controls() %>%
+    train_data() %>%
       recipe() %>%
       step_normalize(all_numeric()) %>%
       step_umap(all_numeric(), seed = c(1, 1)) %>%
       # step_string2factor(label) %>%
       # step_umap(all_numeric(), outcome = vars(label), seed = c(1, 1)) %>%
       prep(strings_as_factors = FALSE) %>%
-      bake(new_data = bind_rows(controls(), norm_counts())) %>%
+      bake(new_data = test_data()) %>%
       ggplot(aes(umap_1, umap_2, color = label, sample = sample)) +
       geom_point() +
       labs(title = "UMAP of biomarkers") +
@@ -329,7 +341,7 @@ server <- function(input, output) {
 # heatmap -----------------------------------------------------------------
 
   output$heatmap <- renderPlot(
-    bind_rows(controls(), norm_counts()) %>%
+    test_data() %>%
       column_to_rownames("sample") %>%
       select(where(is.numeric)) %>%
       t() %>%
