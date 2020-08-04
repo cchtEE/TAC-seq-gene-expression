@@ -11,7 +11,7 @@ targets <- read_tsv("TAC-seq-gene-expression/data/targets/READY76_targets.tsv")
 
 controls <- read_tsv("TAC-seq-gene-expression/data/controls/READY65_control_set.tsv")
 
-patients <- list.files("TAC-seq-gene-expression/data/patients/",
+counts <- list.files("TAC-seq-gene-expression/data/counts/",
                        pattern = "TAC-seq_counts.tsv", full.names = TRUE) %>%
   set_names(nm = basename(.)) %>%
   map_dfr(read_tsv, .id = "file") %>%
@@ -22,7 +22,7 @@ patients <- list.files("TAC-seq-gene-expression/data/patients/",
 
 # plot biomarkers ---------------------------------------------------------
 
-patients %>%
+counts %>%
   filter(type == "biomarker") %>%
   ggplot(aes(sample, molecule_count)) +
   geom_boxplot() +
@@ -36,7 +36,7 @@ ggplotly()
 
 # plot spike-ins ----------------------------------------------------------
 
-patients %>%
+counts %>%
   filter(type == "spike_in") %>%
   ggplot(aes(sample, molecule_count, color = locus)) +
   geom_point() +
@@ -54,7 +54,7 @@ geo_mean <- function(x) {
   exp(mean(log(x)))
 }
 
-patients %>%
+counts %>%
   filter(type == "housekeeper") %>%
   ggplot(aes(sample, molecule_count)) +
   geom_point(aes(color = locus)) +
@@ -68,26 +68,30 @@ ggplotly()
 
 # normalize molecule counts -----------------------------------------------
 
-biomarkers <- patients %>%
+norm_counts <- counts %>%
   group_by(file, sample) %>%
   mutate(norm_factor = geo_mean(molecule_count[type == "housekeeper"])) %>%
   ungroup() %>%
   filter(type == "biomarker") %>%
   mutate(norm_molecule_count = molecule_count / norm_factor) %>%
   filter(is.finite(norm_molecule_count)) %>%
-  pivot_wider(id_cols = c(file, sample), names_from = locus,
-              values_from = norm_molecule_count) %>%
-  bind_rows(controls)
+  pivot_wider(id_cols = sample, names_from = locus,
+              values_from = norm_molecule_count)
 
+
+# train and test data -----------------------------------------------------
+
+train_data <- controls
+test_data <- bind_rows(controls, norm_counts)
 
 # plot PCA ----------------------------------------------------------------
 
-controls %>%
+train_data %>%
   recipe() %>%
   step_normalize(all_numeric()) %>%
   step_pca(all_numeric(), num_comp = 2) %>%
   prep(strings_as_factors = FALSE) %>%
-  bake(new_data = biomarkers) %>%
+  bake(new_data = test_data) %>%
   ggplot(aes(PC1, PC2, color = label, sample = sample)) +
   geom_point() +
   labs(title = "PCA of biomarkers", color = NULL)
@@ -96,14 +100,14 @@ ggplotly()
 
 # plot UMAP ---------------------------------------------------------------
 
-controls %>%
+train_data %>%
   recipe() %>%
   step_normalize(all_numeric()) %>%
   step_umap(all_numeric(), seed = c(1, 1)) %>%
   # step_string2factor(label) %>%
   # step_umap(all_numeric(), outcome = vars(label), seed = c(1, 1)) %>%
   prep(strings_as_factors = FALSE) %>%
-  bake(new_data = biomarkers) %>%
+  bake(new_data = test_data) %>%
   ggplot(aes(umap_1, umap_2, color = label, sample = sample)) +
   geom_point() +
   labs(title = "UMAP of biomarkers", color = NULL)
@@ -112,7 +116,7 @@ ggplotly()
 
 # plot heatmap ------------------------------------------------------------
 
-biomarkers %>%
+test_data %>%
   column_to_rownames("sample") %>%
   select(where(is.numeric)) %>%
   t() %>%
