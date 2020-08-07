@@ -8,7 +8,7 @@ library(pheatmap)
 
 # read data ---------------------------------------------------------------
 
-targets <- read_tsv("TAC-seq-gene-expression/data/targets/READY61_targets.tsv")
+targets <- read_tsv("TAC-seq-gene-expression/data/targets/READY_61targets.tsv")
 
 counts <- dir_ls("TAC-seq-gene-expression/data/counts/", glob = "*TAC-seq_counts.tsv") %>%
   map_dfr(read_tsv, .id = "file") %>%
