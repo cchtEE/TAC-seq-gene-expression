@@ -8,10 +8,9 @@ library(pheatmap)
 
 # read data ---------------------------------------------------------------
 
-targets <- read_tsv("TAC-seq-gene-expression/data/targets/READY65_targets.tsv")
+targets <- read_tsv("TAC-seq-gene-expression/data/targets/READY61_targets.tsv")
 
-# counts <- dir_ls("TAC-seq-gene-expression/data/counts/", glob = "*TAC-seq_counts.tsv") %>%
-counts <- "C://Users/hindrek/Desktop/READY80_counts_umi1.tsv" %>%
+counts <- dir_ls("TAC-seq-gene-expression/data/counts/", glob = "*TAC-seq_counts.tsv") %>%
   map_dfr(read_tsv, .id = "file") %>%
   mutate(file = path_file(file)) %>%
   filter(!str_detect(sample, "Undetermined"),  # remove undetermined samples
@@ -40,19 +39,6 @@ counts %>%
   labs(title = "Counts", x = NULL, y = "molecule count") +
   theme(axis.text.x = element_text(vjust = 0.5, angle = 90))
 ggplotly()
-
-
-# # plot spike-ins ----------------------------------------------------------
-#
-# counts %>%
-#   filter(type == "spike_in") %>%
-#   ggplot(aes(sample, molecule_count, color = locus)) +
-#   geom_point() +
-#   geom_line(aes(group = locus)) +
-#   facet_wrap(vars(file), scales = "free") +
-#   labs(title = "ERCC spike-ins", x = NULL, y = "molecule count") +
-#   theme(axis.text.x = element_text(vjust = 0.5, angle = 90))
-# ggplotly()
 
 
 # plot housekeeper --------------------------------------------------------

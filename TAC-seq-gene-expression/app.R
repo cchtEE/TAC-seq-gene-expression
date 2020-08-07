@@ -42,8 +42,8 @@ ui <- dashboardPage(
           "target_list", label = "Choose target list or file:",
           choices = list(
             "Choose one" = "",
-            "READY65 targets" = "data/targets/READY65_targets.tsv",
-            "READY76 targets" = "data/targets/READY76_targets.tsv"
+            "READY61 targets" = "data/targets/READY61_targets.tsv",
+            "READY72 targets" = "data/targets/READY72_targets.tsv"
           )
         ),
         fileInput("target_file", label = "", accept = "text"),
