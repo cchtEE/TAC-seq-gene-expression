@@ -2,15 +2,15 @@ library(tidyverse)
 library(fs)
 library(plotly)
 library(recipes)
+library(heatmaply)
 library(embed)
-library(pheatmap)
 
 
 # read data ---------------------------------------------------------------
 
-targets <- read_tsv("TAC-seq-gene-expression/data/targets/READY_61targets.tsv")
+targets <- read_tsv("TAC-seq-gene-expression/data/targets/READY_72targets.tsv")
 
-counts <- dir_ls("TAC-seq-gene-expression/data/counts/", glob = "*TAC-seq_counts.tsv") %>%
+counts <- dir_ls("TAC-seq-gene-expression/data/counts/", glob = "*.tsv") %>%
   map_dfr(read_tsv, .id = "file") %>%
   mutate(file = path_file(file)) %>%
   filter(!str_detect(sample, "Undetermined"),  # remove undetermined samples
@@ -24,8 +24,15 @@ counts <- dir_ls("TAC-seq-gene-expression/data/counts/", glob = "*TAC-seq_counts
          norm_molecule_count = molecule_count / hk_geo_mean) %>%
   ungroup()
 
-controls <- read_tsv("TAC-seq-gene-expression/data/controls/READY65_control_set.tsv") %>%
-  select(sample, label, !!targets$target[targets$type == "biomarker"])
+controls <- read_tsv("TAC-seq-gene-expression/data/controls/READY_controls_400k_reads.tsv") %>%
+  select(sample, group, !!targets$target[targets$type == "biomarker"]) %>%
+  mutate(group = factor(group, c("pre-receptive",
+                                 "early-receptive",
+                                 "receptive HRT",
+                                 "late-receptive",
+                                 "post-receptive",
+                                 "menstrual blood",
+                                 "polyp")))
 
 
 # plot counts -------------------------------------------------------------
@@ -73,12 +80,9 @@ test_data <- bind_rows(norm_biomarkers, controls)
 # plot heatmap ------------------------------------------------------------
 
 test_data %>%
+  select(-file) %>%
   column_to_rownames("sample") %>%
-  select(where(is.numeric)) %>%
-  t() %>%
-  na_if(0) %>%
-  log() %>%
-  pheatmap(treeheight_row = 0, main = "Biomarkers")
+  heatmaply(dendrogram = "row", scale = "column", hide_colorbar = TRUE)
 
 
 # plot PCA ----------------------------------------------------------------
@@ -89,7 +93,7 @@ train_data %>%
   step_pca(all_numeric(), num_comp = 2) %>%
   prep(strings_as_factors = FALSE) %>%
   bake(new_data = test_data) %>%
-  ggplot(aes(PC1, PC2, color = label, sample = sample)) +
+  ggplot(aes(PC1, PC2, color = group, sample = sample)) +
   geom_point() +
   labs(title = "PCA of biomarkers", color = NULL)
 ggplotly()
@@ -101,11 +105,11 @@ train_data %>%
   recipe() %>%
   step_normalize(all_numeric()) %>%
   # step_umap(all_numeric(), seed = c(1, 1)) %>%
-  step_string2factor(label) %>%
-  step_umap(all_numeric(), outcome = vars(label), seed = c(1, 1)) %>%
+  step_string2factor(group) %>%
+  step_umap(all_numeric(), outcome = vars(group), seed = c(1, 1)) %>%
   prep(strings_as_factors = FALSE) %>%
   bake(new_data = test_data) %>%
-  ggplot(aes(umap_1, umap_2, color = label, sample = sample)) +
+  ggplot(aes(umap_1, umap_2, color = group, sample = sample)) +
   geom_point() +
   labs(title = "UMAP of biomarkers", color = NULL)
 ggplotly()

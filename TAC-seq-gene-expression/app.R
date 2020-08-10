@@ -3,7 +3,7 @@ library(shinydashboard)
 library(tidyverse)
 library(DT)
 library(recipes)
-library(pheatmap)
+library(heatmaply)
 library(plotly)
 library(embed)
 
@@ -72,19 +72,18 @@ ui <- dashboardPage(
           "control_list", label = "Choose control list or file (optional):",
           choices = list(
             "Choose one" = "",
-            "READY65 control set" = "data/controls/READY65_control_set.tsv",
-            "READY65 small control set" = "data/controls/READY65_small_control_set.tsv"
+            "READY controls 400k reads" = "data/controls/READY_controls_400k_reads.tsv"
           )
         ),
         fileInput("control_file", label = "", accept = "text"),
         h3("Controls"),
         dataTableOutput("controls"),
         h3("Heatmap"),
-        plotOutput("heatmap", width = "auto", height = 700),
+        plotlyOutput("heatmap", width = "auto", height = 900),
         h3("PCA"),
-        plotlyOutput("pca", width = "auto", height = 700),
+        plotlyOutput("pca", width = "auto", height = 900),
         h3("UMAP"),
-        plotlyOutput("umap", width = "auto", height = 700)
+        plotlyOutput("umap", width = "auto", height = 900)
       )
     )
   )
@@ -268,7 +267,14 @@ server <- function(input, output) {
         need(
           try(
             controls <- read_tsv(control_list) %>%
-              select(sample, group, !!biomarkers)
+              select(sample, group, !!biomarkers) %>%
+              mutate(group = factor(group, c("pre-receptive",
+                                             "early-receptive",
+                                             "receptive HRT",
+                                             "late-receptive",
+                                             "post-receptive",
+                                             "menstrual blood",
+                                             "polyp")))
           ),
           "Missing target(s) in controls. Please choose correct controls or targets."
         )
@@ -295,14 +301,11 @@ server <- function(input, output) {
 
 # heatmap -----------------------------------------------------------------
 
-  output$heatmap <- renderPlot(
+  output$heatmap <- renderPlotly(
     test_data() %>%
+      select(-file) %>%
       column_to_rownames("sample") %>%
-      select(where(is.numeric)) %>%
-      t() %>%
-      na_if(0) %>%
-      log() %>%
-      pheatmap(treeheight_row = 0)
+      heatmaply(dendrogram = "row", scale = "column", hide_colorbar = TRUE)
   )
 
 
@@ -316,8 +319,7 @@ server <- function(input, output) {
       prep(strings_as_factors = FALSE) %>%
       bake(new_data = test_data()) %>%
       ggplot(aes(PC1, PC2, color = group, sample = sample)) +
-      geom_point() +
-      coord_equal()
+      geom_point()
     ggplotly()
   })
 
@@ -334,8 +336,7 @@ server <- function(input, output) {
       prep(strings_as_factors = FALSE) %>%
       bake(new_data = test_data()) %>%
       ggplot(aes(umap_1, umap_2, color = group, sample = sample)) +
-      geom_point() +
-      coord_equal()
+      geom_point()
     ggplotly()
   })
 }
