@@ -72,7 +72,11 @@ ui <- dashboardPage(
           "control_list", label = "Choose control list or file (optional):",
           choices = list(
             "Choose one" = "",
-            "READY controls 400k reads" = "data/controls/READY_controls_400k_reads.tsv"
+            "READY controls" = "data/controls/READY_controls.tsv",
+            "READY controls (small set)" = "data/controls/READY_controls_small.tsv",
+            "READY HRT controls (400k reads)" = "data/controls/READY_HRT_controls_400k_reads.tsv",
+            "READY HRT controls (all reads)" = "data/controls/READY_HRT_controls_all_reads.tsv",
+            "READY HRT controls (read count)" = "data/controls/READY_HRT_controls_read_count.tsv"
           )
         ),
         fileInput("control_file", label = "", accept = "text"),
@@ -270,6 +274,7 @@ server <- function(input, output) {
               select(sample, group, !!biomarkers) %>%
               mutate(group = factor(group, c("pre-receptive",
                                              "early-receptive",
+                                             "receptive",
                                              "receptive HRT",
                                              "late-receptive",
                                              "post-receptive",

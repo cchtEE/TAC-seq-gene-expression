@@ -28,6 +28,7 @@ controls <- read_tsv("TAC-seq-gene-expression/data/controls/READY_controls_400k_
   select(sample, group, !!targets$target[targets$type == "biomarker"]) %>%
   mutate(group = factor(group, c("pre-receptive",
                                  "early-receptive",
+                                 "receptive",
                                  "receptive HRT",
                                  "late-receptive",
                                  "post-receptive",
