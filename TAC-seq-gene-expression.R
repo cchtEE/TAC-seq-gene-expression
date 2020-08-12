@@ -10,7 +10,7 @@ library(embed)
 
 targets <- read_tsv("TAC-seq-gene-expression/data/targets/READY_72targets.tsv")
 
-counts <- dir_ls("TAC-seq-gene-expression/data/counts/", glob = "*.tsv") %>%
+counts <- dir_ls("TAC-seq-gene-expression/data/counts/", glob = "*TAC-seq_counts_umi1.tsv") %>%
   map_dfr(read_tsv, .id = "file") %>%
   mutate(file = path_file(file)) %>%
   filter(!str_detect(sample, "Undetermined"),  # remove undetermined samples
@@ -24,7 +24,7 @@ counts <- dir_ls("TAC-seq-gene-expression/data/counts/", glob = "*.tsv") %>%
          norm_molecule_count = molecule_count / hk_geo_mean) %>%
   ungroup()
 
-controls <- read_tsv("TAC-seq-gene-expression/data/controls/READY_controls_400k_reads.tsv") %>%
+controls <- read_tsv("TAC-seq-gene-expression/data/controls/READY_HRT_controls_400k_reads.tsv") %>%
   select(sample, group, !!targets$target[targets$type == "biomarker"]) %>%
   mutate(group = factor(group, c("pre-receptive",
                                  "early-receptive",
@@ -83,7 +83,16 @@ test_data <- bind_rows(norm_biomarkers, controls)
 test_data %>%
   select(-file) %>%
   column_to_rownames("sample") %>%
-  heatmaply(dendrogram = "row", scale = "column", hide_colorbar = TRUE)
+  na_if(0) %>%
+  mutate(across(where(is.numeric), log)) %>%
+  heatmaply(colors = hcl.colors(256), dendrogram = "both",
+  # heatmaply(colors = rainbow(256), dendrogram = "both",
+  # heatmaply(colors = heat.colors(256), dendrogram = "both",
+  # heatmaply(colors = terrain.colors(256), dendrogram = "both",
+  # heatmaply(colors = topo.colors(256), dendrogram = "both",
+  # heatmaply(colors = cm.colors(256), dendrogram = "both",
+            scale = "column", show_dendrogram = c(TRUE, FALSE),
+            hide_colorbar = TRUE)
 
 
 # plot PCA ----------------------------------------------------------------
@@ -94,9 +103,10 @@ train_data %>%
   step_pca(all_numeric(), num_comp = 2) %>%
   prep(strings_as_factors = FALSE) %>%
   bake(new_data = test_data) %>%
-  ggplot(aes(PC1, PC2, color = group, sample = sample)) +
+  ggplot(aes(PC1, PC2, color = group, shape = group, sample = sample)) +
   geom_point() +
-  labs(title = "PCA of biomarkers", color = NULL)
+  scale_shape_manual(values = 1:7) +
+  labs(title = "PCA of biomarkers")
 ggplotly()
 
 
@@ -110,7 +120,8 @@ train_data %>%
   step_umap(all_numeric(), outcome = vars(group), seed = c(1, 1)) %>%
   prep(strings_as_factors = FALSE) %>%
   bake(new_data = test_data) %>%
-  ggplot(aes(umap_1, umap_2, color = group, sample = sample)) +
+  ggplot(aes(umap_1, umap_2, color = group, shape = group, sample = sample)) +
   geom_point() +
-  labs(title = "UMAP of biomarkers", color = NULL)
+  scale_shape_manual(values = 1:7) +
+  labs(title = "UMAP of biomarkers")
 ggplotly()
