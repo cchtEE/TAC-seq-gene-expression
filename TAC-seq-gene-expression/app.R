@@ -310,6 +310,8 @@ server <- function(input, output) {
     test_data() %>%
       select(-file) %>%
       column_to_rownames("sample") %>%
+      na_if(0) %>%
+      mutate(across(where(is.numeric), log)) %>%
       heatmaply(dendrogram = "row", scale = "column", hide_colorbar = TRUE)
   )
 
@@ -323,7 +325,7 @@ server <- function(input, output) {
       step_pca(all_numeric(), num_comp = 2) %>%
       prep(strings_as_factors = FALSE) %>%
       bake(new_data = test_data()) %>%
-      ggplot(aes(PC1, PC2, color = group, sample = sample)) +
+      ggplot(aes(PC1, PC2, color = group, shape = group, sample = sample)) +
       geom_point()
     ggplotly()
   })
@@ -340,7 +342,7 @@ server <- function(input, output) {
       step_umap(all_numeric(), outcome = vars(group), seed = c(1, 1)) %>%
       prep(strings_as_factors = FALSE) %>%
       bake(new_data = test_data()) %>%
-      ggplot(aes(umap_1, umap_2, color = group, sample = sample)) +
+      ggplot(aes(umap_1, umap_2, color = group, shape = group, sample = sample)) +
       geom_point()
     ggplotly()
   })
