@@ -4,6 +4,7 @@ library(tidyverse)
 library(DT)
 library(recipes)
 library(heatmaply)
+library(RColorBrewer)
 library(plotly)
 library(embed)
 
@@ -312,7 +313,9 @@ server <- function(input, output) {
       column_to_rownames("sample") %>%
       na_if(0) %>%
       mutate(across(where(is.numeric), log)) %>%
-      heatmaply(dendrogram = "row", scale = "column", hide_colorbar = TRUE)
+      heatmaply(colors = rev(brewer.pal(n = 7, name = "RdYlBu")),
+                scale = "column", show_dendrogram = c(TRUE, FALSE),
+                hide_colorbar = TRUE)
   )
 
 
@@ -326,7 +329,8 @@ server <- function(input, output) {
       prep(strings_as_factors = FALSE) %>%
       bake(new_data = test_data()) %>%
       ggplot(aes(PC1, PC2, color = group, shape = group, sample = sample)) +
-      geom_point()
+      geom_point() +
+      scale_shape_manual(values = 1:7)
     ggplotly()
   })
 
@@ -343,7 +347,8 @@ server <- function(input, output) {
       prep(strings_as_factors = FALSE) %>%
       bake(new_data = test_data()) %>%
       ggplot(aes(umap_1, umap_2, color = group, shape = group, sample = sample)) +
-      geom_point()
+      geom_point() +
+      scale_shape_manual(values = 1:7)
     ggplotly()
   })
 }

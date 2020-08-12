@@ -3,6 +3,7 @@ library(fs)
 library(plotly)
 library(recipes)
 library(heatmaply)
+library(RColorBrewer)
 library(embed)
 
 
@@ -85,14 +86,8 @@ test_data %>%
   column_to_rownames("sample") %>%
   na_if(0) %>%
   mutate(across(where(is.numeric), log)) %>%
-  heatmaply(colors = hcl.colors(256), dendrogram = "both",
-  # heatmaply(colors = rainbow(256), dendrogram = "both",
-  # heatmaply(colors = heat.colors(256), dendrogram = "both",
-  # heatmaply(colors = terrain.colors(256), dendrogram = "both",
-  # heatmaply(colors = topo.colors(256), dendrogram = "both",
-  # heatmaply(colors = cm.colors(256), dendrogram = "both",
-            scale = "column", show_dendrogram = c(TRUE, FALSE),
-            hide_colorbar = TRUE)
+  heatmaply(colors = rev(brewer.pal(n = 7, name = "RdYlBu")), scale = "column",
+            show_dendrogram = c(TRUE, FALSE), hide_colorbar = TRUE)
 
 
 # plot PCA ----------------------------------------------------------------
