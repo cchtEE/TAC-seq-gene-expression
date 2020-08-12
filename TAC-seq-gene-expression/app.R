@@ -1,29 +1,32 @@
 library(shiny)
 library(shinydashboard)
-library(DT)
 library(tidyverse)
+library(DT)
+library(recipes)
+library(heatmaply)
 library(plotly)
-library(pheatmap)
+library(embed)
 
 
 ui <- dashboardPage(
-  dashboardHeader(title = "TAC-seq gene expression", titleWidth = 275),
+  dashboardHeader(title = "TAC-seq gene expression"),
   dashboardSidebar(
-    width = 275,
     sidebarMenu(
       menuItem("Input", tabName = "input"),
-      menuItem("Quality control", tabName = "qc"),
-      menuItem("Normalization", tabName = "norm"),
-      menuItem("Visualization", tabName = "visual"),
-      tags$a(href = "https://github.com/cchtEE/TAC-seq-gene-expression", "GitHub", align = "center", style = "
-              position:absolute;
-              bottom:0;
-              width:100%;
-              height:40px;   /* Height of the footer */
-              color: white;
-              padding: 10px;
-              background-color: black;
-              z-index: 1000;")
+      menuItem("Normalization", tabName = "normalization"),
+      menuItem("Visualization", tabName = "visualization"),
+      tags$a(
+        href = "https://github.com/seqinfo/tac-seq-gene-expression", "GitHub",
+        align = "center", style = "
+        position:absolute;
+        bottom:0;
+        width:100%;
+        weight:40px;   /* Height of the footer */
+        color: white;
+        padding: 10px;
+        background-color: black;
+        z-index: 1000;"
+      )
     )
   ),
   dashboardBody(
@@ -32,51 +35,59 @@ ui <- dashboardPage(
         tabName = "input",
         h1("Input"),
         p("Use TAC-seq data analysis output file as an input."),
-        fileInput("counts", label = "Choose count file(s):", accept = "text", multiple = T),
-        selectInput("target_list", label = "Choose target list or file:", choices = list(
-          "Choose one" = "",
-          "READY65 target set" = "data/targets/READY65_target_set.tsv",
-          "READY76 target set" = "data/targets/READY76_target_set.tsv"
-        )),
+        fileInput("counts", label = "Choose input file(s):", multiple = TRUE,
+          accept = "text"
+        ),
+        selectInput(
+          "target_list", label = "Choose target list or file:",
+          choices = list(
+            "Choose one" = "",
+            "READY 61 targets" = "data/targets/READY_61targets.tsv",
+            "READY 72 targets" = "data/targets/READY_72targets.tsv"
+          )
+        ),
         fileInput("target_file", label = "", accept = "text"),
-        selectInput("control_list", label = "Choose control list or file (optional):", choices = list(
-          "Choose one" = "",
-          "READY65 control set" = "data/controls/READY65_control_set.tsv",
-          "READY65 small control set" = "data/controls/READY65_small_control_set.tsv"
-        )),
-        fileInput("control_file", label = "", accept = "text"),
-        plotOutput("biomarkers"),
-        h2("Targets"),
-        tableOutput("targets"),
-        h2("Raw data"),
-        dataTableOutput("data"),
-        h2("Control data"),
-        dataTableOutput("controls")
+        h3("Counts"),
+        plotOutput("count_plot"),
+        dataTableOutput("counts"),
+        h3("Targets"),
+        dataTableOutput("targets")
       ),
       tabItem(
-        tabName = "qc",
-        h1("Quality control"),
-        p("ERCC spike-in controls are used for quality control."),
-        plotOutput("spike_ins")
-      ),
-      tabItem(
-        tabName = "norm",
+        tabName = "normalization",
         h1("Normalization"),
         p("Molecule counts are normalized by geometric mean of housekeeping genes."),
+        h3("Housekeeping genes"),
         plotOutput("housekeepers"),
-        h2("Normalized data"),
-        p("Samples, which geometric mean of housekeeping genes is zero, are removed."),
-        p("Removed sample(s):"),
-        verbatimTextOutput("outliers"),
-        dataTableOutput("bm"),
+        h3("Normalized counts"),
+        p("Samples with geometric mean of zero are removed."),
+        dataTableOutput("norm_biomarkers"),
         uiOutput("download")
       ),
       tabItem(
-        tabName = "visual",
+        tabName = "visualization",
         h1("Visualization"),
         p("Visualizing the normalized molecule counts of targeted biomarkers."),
-        plotlyOutput("pca"),
-        plotOutput("heatmap")
+        selectInput(
+          "control_list", label = "Choose control list or file (optional):",
+          choices = list(
+            "Choose one" = "",
+            "READY controls" = "data/controls/READY_controls.tsv",
+            "READY controls (small set)" = "data/controls/READY_controls_small.tsv",
+            "READY HRT controls (400k reads)" = "data/controls/READY_HRT_controls_400k_reads.tsv",
+            "READY HRT controls (all reads)" = "data/controls/READY_HRT_controls_all_reads.tsv",
+            "READY HRT controls (read count)" = "data/controls/READY_HRT_controls_read_count.tsv"
+          )
+        ),
+        fileInput("control_file", label = "", accept = "text"),
+        h3("Controls"),
+        dataTableOutput("controls"),
+        h3("Heatmap"),
+        plotlyOutput("heatmap", width = "auto", height = 900),
+        h3("PCA"),
+        plotlyOutput("pca", width = "auto", height = 900),
+        h3("UMAP"),
+        plotlyOutput("umap", width = "auto", height = 900)
       )
     )
   )
@@ -84,246 +95,256 @@ ui <- dashboardPage(
 
 server <- function(input, output) {
 
+
 # counts ------------------------------------------------------------------
 
   counts <- reactive({
-    req(input$counts)
-    validate(need(
-      try(
-        counts <- input$counts$datapath %>%
-          set_names(nm = input$counts$name) %>%
-          map_dfr(read_tsv, .id = "file") %>%
-          select(file, sample, locus, molecule_count) %>%
-          filter(
-            !str_detect(sample, "Undetermined"),  # remove undetermined samples
-            locus != "unmatched"  # remove unmatched loci
-          )
+    count_file <- input$counts
+
+    req(count_file, targets())
+
+    n_targets = nrow(targets())
+
+    validate(
+      need(
+        try(
+          counts <- count_file$datapath %>%
+            set_names(nm = count_file$name) %>%
+            map_dfr(read_tsv, .id = "file") %>%
+            filter(!str_detect(sample, "Undetermined"),  # remove undetermined samples
+                   locus != "unmatched") %>%  # remove unmatched loci
+            right_join(targets(), by = c("locus" = "target")) %>%
+            complete(nesting(file, sample), nesting(locus, type)) %>%
+            group_by(sample) %>%
+            # filter(n() == n_targets,  # remove duplicated samples
+            #        !any(is.na(molecule_count))) %>%  # remove samples with missing targets
+            mutate(hk_geo_mean = exp(mean(log(molecule_count[type == "housekeeper"]))),  # geometric mean of housekeeping genes
+                   norm_molecule_count = molecule_count / hk_geo_mean) %>%
+            ungroup()
+        ),
+        "Incorrect input file(s). Please choose correct TAC-seq count file(s) with columns 'sample', 'locus', and 'molecule_count'."
+      )
+    )
+
+    validate(
+      need(
+        counts %>%
+          count(sample) %>%
+          filter(n != n_targets) %>%
+          nrow() == 0,
+        counts %>%
+          count(sample) %>%
+          filter(n != n_targets) %>%
+          transmute(duplicated = str_c(sample, " is duplicated")) %>%
+          pull()
       ),
-      "Incorrect count file(s). Please choose correct TAC-seq count file(s) with columns \"sample\", \"locus\" and \"molecule_count\"."
-    ))
+      need(
+        !anyNA(counts$molecule_count),
+        counts %>%
+          filter(is.na(molecule_count), !is.na(sample)) %>%
+          transmute(missing = str_c(sample, ": ", locus, " is missing")) %>%
+          pull()
+      )
+    )
+
     counts
   })
 
   output$counts <- renderDataTable(counts())
 
+
 # targets -----------------------------------------------------------------
 
   targets <- reactive({
-    if (isTruthy(input$target_file)) {
-      validate(need(
-        try(
-          targets <- input$target_file$datapath %>%
-            read_tsv() %>%
-            select(target, type)
-        ),
-        "Incorrect target file. Please choose correct target file with columns \"target\" and \"type\"."
-      ))
-    } else if (isTruthy(input$target_list)) {
-      targets <- input$target_list %>%
-        read_tsv()
+    target_file <- input$target_file
+    target_list <- input$target_list
+
+    if (isTruthy(target_file)) {
+      validate(
+        need(
+          try(
+            targets <- read_tsv(target_file$datapath) %>%
+              select(target, type)
+          ),
+          "Incorrect target file. Please choose correct target file with columns 'target', and 'type'."
+        )
+      )
+    } else if (isTruthy(target_list)) {
+      targets <- read_tsv(target_list)
     } else {
       req(FALSE)
     }
+
     targets
   })
 
-  output$targets <- renderTable(
-    targets() %>%
-      count(type)
+  output$targets <- renderDataTable(
+    targets()
   )
 
-# controls ----------------------------------------------------------------
 
-  controls <- reactive({
-    bm <- targets() %>%
-      filter(type == "biomarker") %>%
-      pull(target)
+# plot counts -------------------------------------------------------------
 
-    if (isTruthy(input$control_file)) {
-      validate(need(
-        try(
-          controls <- input$control_file$datapath %>%
-            read_tsv() %>%
-            select(sample, label, !!bm)
-        ),
-        "Incorrect control file. Please choose correct control file with columns \"sample\", \"label\" and column for each \"target\"."
-      ))
-    } else if (isTruthy(input$control_list)) {
-      validate(need(
-        try(
-          controls <- input$control_list %>%
-            read_tsv() %>%
-            select(sample, label, !!bm)
-        ),
-        "Missing target(s) in controls. Please choose correct targets or controls."
-      ))
-    } else {
-      return(NULL)
-    }
-    controls
-  })
-
-  output$controls <- renderDataTable(controls())
-
-# data --------------------------------------------------------------------
-
-  data <- reactive(
+  output$count_plot <- renderPlot(
     counts() %>%
-      left_join(targets(), by = c("locus" = "target"))
-  )
-
-  output$data <- renderDataTable(data())
-
-# biomarkers --------------------------------------------------------------
-
-  output$biomarkers <- renderPlot(
-    data() %>%
-      filter(type == "biomarker") %>%
       ggplot(aes(sample, molecule_count)) +
       geom_boxplot() +
-      geom_point(aes(color = locus)) +
+      geom_point(aes(color = locus), show.legend = FALSE) +
       scale_y_log10() +
       facet_wrap(vars(file), scales = "free") +
-      labs(title = "Biomarkers", subtitle = "raw molecule counts", y = "molecule count") +
+      labs(x = NULL, y = "molecule count", color = NULL) +
       theme(axis.text.x = element_text(vjust = 0.5, angle = 90))
   )
 
-# spike-ins ---------------------------------------------------------------
 
-  output$spike_ins <- renderPlot(
-    data() %>%
-      filter(type == "spike_in") %>%
-      ggplot(aes(sample, molecule_count)) +
-      geom_boxplot() +
-      geom_point(aes(color = locus)) +
-      facet_wrap(vars(file), scales = "free") +
-      labs(title = "ERCC spike-in controls", subtitle = "raw molecule counts", y = "molecule count") +
-      theme(axis.text.x = element_text(vjust = 0.5, angle = 90))
-  )
-
-# housekeepers ------------------------------------------------------------
+# plot housekeepers -------------------------------------------------------
 
   output$housekeepers <- renderPlot(
-    data() %>%
+    counts() %>%
       filter(type == "housekeeper") %>%
       ggplot(aes(sample, molecule_count)) +
-      geom_boxplot() +
       geom_point(aes(color = locus)) +
+      geom_errorbar(aes(y = hk_geo_mean, ymin = hk_geo_mean, ymax = hk_geo_mean),
+                    size = 1) +
       facet_wrap(vars(file), scales = "free") +
-      labs(title = "Housekeeping genes", subtitle = "raw molecule counts", y = "molecule count") +
+      labs(x = NULL, y = "molecule count") +
       theme(axis.text.x = element_text(vjust = 0.5, angle = 90))
   )
 
-# normalization -----------------------------------------------------------
 
-  bm <- reactive({
-    if (isTruthy(data()))
-    validate(need(
-      try(
-        lst <- data() %>%
-          select(sample, locus, molecule_count, type) %>%
-          spread(sample, molecule_count) %>%
-          split(.$type) %>%
-          map(select, -type) %>%
-          map(column_to_rownames, "locus") %>%
-          map(as.matrix)
-      ),
-      "Duplicated samples. Please rename or remove duplicated samples from count files."
-    ))
+# biomarker counts --------------------------------------------------------
 
-    bm_raw <- lst$biomarker
-    hk_raw <- lst$housekeeper
-
-    norm_factor <- exp(apply(log(hk_raw), 2, mean))  # housekeepers geometric mean
-    bm <- sweep(bm_raw, 2, norm_factor, "/")
-
-    # remove housekeeper outliers
-    outliers <- "none"
-    hk_zeros <- which(norm_factor == 0)
-    if (length(hk_zeros) > 0) {
-      outliers <- names(hk_zeros)
-      bm <- bm[, -hk_zeros]
-    }
-
-    output$outliers <- renderPrint({
-        cat(outliers, sep = "\n")
-      })
-
-    t(bm)
+  norm_biomarkers <- reactive({
+    counts() %>%
+      filter(type == "biomarker") %>%
+      pivot_wider(id_cols = c(file, sample), names_from = locus,
+                  values_from = norm_molecule_count) %>%
+      filter(across(where(is.numeric), is.finite))
   })
 
-  output$bm <- renderDataTable({
-    bm()
-  })
+  output$norm_biomarkers <- renderDataTable(
+    norm_biomarkers(),
+    options = list(scrollX = TRUE)
+  )
+
 
 # download ----------------------------------------------------------------
 
   output$download <- renderUI({
-    req(bm())
-    downloadButton("file", "Download normalized data")
+    req(norm_biomarkers())
+    downloadButton("file", "Download normalized counts")
   })
 
   output$file <- downloadHandler(
     filename = "TAC-seq_normalized_counts.tsv",
     content = function(file) {
-      bm() %>%
-        as_tibble(rownames = "sample") %>%
+      norm_biomarkers() %>%
         write_tsv(file)
     }
   )
 
-# PCA ---------------------------------------------------------------------
 
-  output$pca <- renderPlotly({
-    if (isTruthy(controls())) {
-      df <- bm() %>%
-        as_tibble(rownames = "sample") %>%
-        bind_rows(controls())
+# controls ----------------------------------------------------------------
 
-      mat <- df %>%
-        select(-label) %>%
-        column_to_rownames("sample") %>%
-        as.matrix()
+  controls <- reactive({
+    control_file <- input$control_file
+    control_list <- input$control_list
 
-      pca <- mat %>%
-        prcomp(scale. = T)
+    req(targets())
 
-      pca$x %>%
-        as_tibble(rownames = "sample") %>%
-        left_join(df) %>%
-        ggplot(aes(PC1, PC2, color = label, group = sample)) +
-        geom_point() +
-        labs(title = "Biomarkers")
+    biomarkers <- targets() %>%
+      filter(type == "biomarker") %>%
+      pull(target)
+
+    if (isTruthy(control_file)) {
+      validate(
+        need(
+          try(
+            controls <- read_tsv(control_file$datapath) %>%
+              select(sample, group, !!biomarkers)
+          ),
+          "Incorrect control file. Please choose correct control file with columns 'sample', 'group', and column for each 'target'."
+        )
+      )
+    } else if (isTruthy(control_list)) {
+      validate(
+        need(
+          try(
+            controls <- read_tsv(control_list) %>%
+              select(sample, group, !!biomarkers) %>%
+              mutate(group = factor(group, c("pre-receptive",
+                                             "early-receptive",
+                                             "receptive",
+                                             "receptive HRT",
+                                             "late-receptive",
+                                             "post-receptive",
+                                             "menstrual blood",
+                                             "polyp")))
+          ),
+          "Missing target(s) in controls. Please choose correct controls or targets."
+        )
+      )
     } else {
-      pca <- bm() %>%
-        prcomp(scale. = T)
-
-      pca$x %>%
-        as_tibble(rownames = "sample") %>%
-        ggplot(aes(PC1, PC2, color = sample)) +
-        geom_point() +
-        labs(title = "Biomarkers")
+      return(NULL)
     }
-    ggplotly()
+
+    controls
   })
+
+  output$controls <- renderDataTable(controls(), options = list(scrollX = TRUE))
+
+
+# train and test data -----------------------------------------------------
+
+  train_data <- reactive(req(controls()))
+  test_data <- reactive({
+    req(controls())
+
+    bind_rows(norm_biomarkers(), controls())
+  })
+
 
 # heatmap -----------------------------------------------------------------
 
-  output$heatmap <- renderPlot({
-    if (isTruthy(controls())) {
-      mat <- bm() %>%
-        as_tibble(rownames = "sample") %>%
-        bind_rows(controls()) %>%
-        select(-label) %>%
-        column_to_rownames("sample") %>%
-        as.matrix()
-    } else {
-      mat <- bm()
-    }
-    mat[mat == 0] <- NA  # replace 0 with NA
-    pheatmap(log(t(mat)), scale = "row", treeheight_row = 0)
+  output$heatmap <- renderPlotly(
+    test_data() %>%
+      select(-file) %>%
+      column_to_rownames("sample") %>%
+      heatmaply(dendrogram = "row", scale = "column", hide_colorbar = TRUE)
+  )
+
+
+# PCA ---------------------------------------------------------------------
+
+  output$pca <- renderPlotly({
+    train_data() %>%
+      recipe() %>%
+      step_normalize(all_numeric()) %>%
+      step_pca(all_numeric(), num_comp = 2) %>%
+      prep(strings_as_factors = FALSE) %>%
+      bake(new_data = test_data()) %>%
+      ggplot(aes(PC1, PC2, color = group, sample = sample)) +
+      geom_point()
+    ggplotly()
   })
 
+
+# UMAP --------------------------------------------------------------------
+
+  output$umap <- renderPlotly({
+    train_data() %>%
+      recipe() %>%
+      step_normalize(all_numeric()) %>%
+      # step_umap(all_numeric(), seed = c(1, 1)) %>%
+      step_string2factor(group) %>%
+      step_umap(all_numeric(), outcome = vars(group), seed = c(1, 1)) %>%
+      prep(strings_as_factors = FALSE) %>%
+      bake(new_data = test_data()) %>%
+      ggplot(aes(umap_1, umap_2, color = group, sample = sample)) +
+      geom_point()
+    ggplotly()
+  })
 }
+
 
 shinyApp(ui = ui, server = server)

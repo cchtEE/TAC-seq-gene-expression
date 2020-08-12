@@ -56,10 +56,6 @@ SLC1A1	biomarker
 SPP1	biomarker
 TCN1	biomarker
 TSPAN8	biomarker
-ERCC_00004	spike_in
-ERCC_00108	spike_in
-ERCC_00116	spike_in
-ERCC_00136	spike_in
 CYC1	housekeeper
 HMBS	housekeeper
 TBP	housekeeper
