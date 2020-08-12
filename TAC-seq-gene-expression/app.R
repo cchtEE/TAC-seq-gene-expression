@@ -143,7 +143,7 @@ server <- function(input, output) {
         !anyNA(counts$molecule_count),
         counts %>%
           filter(is.na(molecule_count), !is.na(sample)) %>%
-          transmute(missing = str_c(sample, ": ", locus, " is missing")) %>%
+          transmute(missing = str_c(sample, " is missing a ", locus, " locus")) %>%
           pull()
       )
     )
@@ -301,7 +301,23 @@ server <- function(input, output) {
   test_data <- reactive({
     req(controls())
 
-    bind_rows(norm_biomarkers(), controls())
+    test_data <- bind_rows(norm_biomarkers(), controls())
+
+    validate(
+      need(
+          test_data %>%
+            count(sample) %>%
+            filter(n > 1) %>%
+            nrow() == 0,
+          test_data %>%
+            count(sample) %>%
+            filter(n > 1) %>%
+            transmute(duplicated = str_c(sample, " name collides with a control sample")) %>%
+            pull()
+      )
+    )
+
+    test_data
   })
 
 
