@@ -77,7 +77,8 @@ ui <- dashboardPage(
             "READY controls (small set)" = "data/controls/READY_controls_small.tsv",
             "READY HRT controls (400k reads)" = "data/controls/READY_HRT_controls_400k_reads.tsv",
             "READY HRT controls (all reads)" = "data/controls/READY_HRT_controls_all_reads.tsv",
-            "READY HRT controls (read count)" = "data/controls/READY_HRT_controls_read_count.tsv"
+            "READY HRT controls (read count)" = "data/controls/READY_HRT_controls_read_count.tsv",
+            "READY PCOS controls (400k reads)" = "data/controls/READY_PCOS_controls_400k_reads.tsv"
           )
         ),
         fileInput("control_file", label = "", accept = "text"),
@@ -280,7 +281,11 @@ server <- function(input, output) {
                                              "late-receptive",
                                              "post-receptive",
                                              "menstrual blood",
-                                             "polyp")))
+                                             "polyp",
+                                             "PE",
+                                             "LH+2",
+                                             "LH+7",
+                                             "LH+10")))
           ),
           "Missing target(s) in controls. Please choose correct controls or targets."
         )
@@ -325,10 +330,10 @@ server <- function(input, output) {
 
   output$heatmap <- renderPlotly(
     test_data() %>%
-      select(-file) %>%
-      column_to_rownames("sample") %>%
       na_if(0) %>%
       mutate(across(where(is.numeric), log)) %>%
+      select(-file) %>%
+      column_to_rownames("sample") %>%
       heatmaply(colors = rev(brewer.pal(n = 7, name = "RdYlBu")),
                 scale = "column", show_dendrogram = c(TRUE, FALSE),
                 hide_colorbar = TRUE)
@@ -357,7 +362,6 @@ server <- function(input, output) {
     train_data() %>%
       recipe() %>%
       step_normalize(all_numeric()) %>%
-      # step_umap(all_numeric(), seed = c(1, 1)) %>%
       step_string2factor(group) %>%
       step_umap(all_numeric(), outcome = vars(group), seed = c(1, 1)) %>%
       prep(strings_as_factors = FALSE) %>%

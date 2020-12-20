@@ -82,10 +82,10 @@ test_data <- bind_rows(norm_biomarkers, controls)
 # plot heatmap ------------------------------------------------------------
 
 test_data %>%
-  select(-file) %>%
-  column_to_rownames("sample") %>%
   na_if(0) %>%
   mutate(across(where(is.numeric), log)) %>%
+  select(-file) %>%
+  column_to_rownames("sample") %>%
   heatmaply(colors = rev(brewer.pal(n = 7, name = "RdYlBu")), scale = "column",
             show_dendrogram = c(TRUE, FALSE), hide_colorbar = TRUE)
 
